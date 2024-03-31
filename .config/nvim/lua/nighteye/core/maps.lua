@@ -39,8 +39,8 @@ keymap("n", "<tab>", ":tabnext<cr>", opts)
 -- Better Vertical navigation
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
--- keymap("n", "<A-d>", "<C-d>zz")
--- keymap("n", "<A-u>", "<C-u>zz")
+keymap("n", "}", "<C-d>zz")
+keymap("n", "{", "<C-u>zz")
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
