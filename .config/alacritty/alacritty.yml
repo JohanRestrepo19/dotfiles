@@ -1,0 +1,21 @@
+import:
+  - /home/nighteye/.config/alacritty/themes/ayu.yml
+font:
+  size: 12
+  bold:
+    family: Blex Mono Nerd Font
+    style: Bold
+  bold_italic:
+    family: Blex Mono Nerd Font
+    style: BoldItalic
+  italic:
+    family: Blex Mono Nerd Font
+    style: Italic
+  normal:
+    family: Blex Mono Nerd Font
+    style: Regular
+window:
+  opacity: 0.90
+  dimensions:
+    columns: 98
+    lines: 26
