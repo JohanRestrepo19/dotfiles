@@ -3,8 +3,6 @@
 return {
     {
         dir = "~/Desktop/dev/lua-plugins/rose-pine",
-        -- dev = true,
-        -- lazy = true,
         dev = true,
         lazy = true,
         priority = 1000,
