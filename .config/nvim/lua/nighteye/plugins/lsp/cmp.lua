@@ -63,7 +63,7 @@ return {
                     ellipsis_char = "...",
                     show_labelDetails = true,
                     menu = {
-                        nvim_lsp = "[LSP]",
+                        nvim_lsp = "[lsp]",
                         nvim_lua = "[api]",
                         buffer = "[buf]",
                         path = "[path]",

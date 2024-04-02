@@ -30,7 +30,7 @@ return {
                 layout_config = {
                     width = 0.95,
                     height = 0.85,
-                    prompt_position = "top",
+                    prompt_position = "bottom",
                     horizontal = {
                         preview_width = function(_, cols, _)
                             if cols > 200 then
@@ -96,7 +96,7 @@ return {
                     respect_gitignore = false,
                     select_buffer = true,
                     theme = "dropdown",
-                    layout_config = { height = 40, prompt_position = "bottom" },
+                    layout_config = { height = 40, prompt_position = "top" },
                     mappings = {
                         ["i"] = {
                             -- your custom insert mode mappings
@@ -116,19 +116,8 @@ return {
 
         local opts = { noremap = true, silent = true }
 
-        vim.keymap.set("n", "<c-p>", function()
-            local cwd = vim.fn.getcwd()
-            if is_inside_work_tree[cwd] == nil then
-                vim.fn.system("git rev-parse --is-inside-work-tree")
-                is_inside_work_tree[cwd] = vim.v.shell_error == 0
-            end
-
-            if is_inside_work_tree[cwd] then
-                builtin.git_files()
-            else
-                builtin.find_files()
-            end
-        end, opts)
+        vim.keymap.set("n", "<c-p>", builtin.git_files, opts)
+        vim.keymap.set("n", "<leader>pf", builtin.find_files, opts)
         vim.keymap.set("n", "<leader>ft", builtin.live_grep, opts)
         vim.keymap.set("n", "<leader>fw", builtin.grep_string, opts)
         vim.keymap.set("n", "<leader>fW", function()

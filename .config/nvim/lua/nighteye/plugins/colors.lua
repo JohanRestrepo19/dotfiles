@@ -4,7 +4,7 @@ return {
     {
         dir = "~/Desktop/dev/lua-plugins/rose-pine",
         dev = true,
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             local rose_pine = require("rose-pine")
@@ -12,11 +12,11 @@ return {
                 styles = {
                     comments = { italic = true },
                     keywords = { bold = false, italic = false },
-                    functions = { bold = false, italic = true },
+                    functions = { bold = true, italic = false },
                     variables = {},
 
-                    bold = true,
-                    italic = true,
+                    bold = false,
+                    italic = false,
                     transparency = true,
                 },
 
@@ -128,7 +128,7 @@ return {
     },
     {
         "marko-cerovac/material.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("material").setup({
