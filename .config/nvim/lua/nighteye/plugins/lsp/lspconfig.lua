@@ -73,6 +73,7 @@ return {
                 "lua_ls",
                 "prismals",
                 "pyright",
+                "solargraph",
                 "tailwindcss",
                 "tsserver",
                 "eslint",

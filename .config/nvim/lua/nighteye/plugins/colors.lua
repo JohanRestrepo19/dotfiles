@@ -2,21 +2,23 @@
 
 return {
     {
+        "rose-pine/neovim",
+        as = "rose-pine",
         dir = "~/Desktop/dev/lua-plugins/rose-pine",
-        dev = true,
-        lazy = false,
+        dev = false,
+        lazy = true,
         priority = 1000,
         config = function()
             local rose_pine = require("rose-pine")
             rose_pine.setup({
                 styles = {
-                    comments = { italic = true },
-                    keywords = { bold = false, italic = false },
-                    functions = { bold = true, italic = false },
-                    variables = {},
+                    -- comments = { italic = true },
+                    -- keywords = { bold = false, italic = false },
+                    -- functions = { bold = true, italic = false },
+                    -- variables = {},
 
-                    bold = false,
-                    italic = false,
+                    -- bold = false,
+                    -- italic = false,
                     transparency = true,
                 },
 
@@ -35,37 +37,49 @@ return {
         lazy = true,
         priority = 1000,
         config = function()
+            local bg = "#011628"
+            local bg_dark = "#011423"
+            local bg_highlight = "#143652"
+            local bg_search = "#0A64AC"
+            local bg_visual = "#275378"
+            local fg = "#CBE0F0"
+            local fg_dark = "#B4D0E9"
+            local fg_gutter = "#627E97"
+            local border = "#547998"
+
             require("tokyonight").setup({
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-                light_style = "day", -- The theme is used when the background is set to light
-                transparent = true, -- Enable this to disable setting the background color
-                terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+                style = "night",
+                light_style = "day",
+                transparent = true,
+                terminal_colors = true,
                 styles = {
-                    -- Style to be applied to different syntax groups
-                    -- Value is any valid attr-list value for `:help nvim_set_hl`
                     comments = { italic = true },
                     keywords = { bold = false, italic = false },
                     functions = { bold = true, italic = false },
                     variables = {},
-                    -- Background styles. Can be "dark", "transparent" or "normal"
-                    sidebars = "transparent", -- style for sidebars, see below
-                    floats = "transparent", -- style for floating windows
+                    sidebars = "transparent",
+                    floats = "transparent",
                 },
-                sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-                day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
-                hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-                dim_inactive = false, -- dims inactive windows
-                lualine_bold = true, -- When `true`, section headers in the lualine theme will be bold
 
-                --- You can override specific color groups to use other groups or a hex color
-                --- function will be called with a ColorScheme table
                 ---@param colors ColorScheme
-                on_colors = function(_) end,
+                on_colors = function(colors)
+                    colors.bg = bg
+                    colors.bg_dark = bg_dark
+                    colors.bg_float = bg_dark
+                    colors.bg_highlight = bg_highlight
+                    colors.bg_popup = bg_dark
+                    colors.bg_search = bg_search
+                    colors.bg_sidebar = bg_dark
+                    colors.bg_statusline = bg_dark
+                    colors.bg_visual = bg_visual
+                    colors.border = border
+                    colors.fg = fg
+                    colors.fg_dark = fg_dark
+                    colors.fg_float = fg
+                    colors.fg_gutter = fg_gutter
+                    colors.fg_sidebar = fg_dark
+                end,
 
-                --- You can override specific highlights to use other groups or a hex color
-                --- function will be called with a Highlights and ColorScheme table
                 ---@param highlights Highlights
                 ---@param colors ColorScheme
                 on_highlights = function(highlights, colors)
@@ -77,7 +91,7 @@ return {
                     highlights.DiagnosticVirtualTextHint = { bg = colors.none, fg = colors.hint }
                     highlights.LineNr = { fg = colors.dark5 }
                     highlights.CursorLineNr = { fg = colors.orange }
-                    highlights.CursorLine = { bg = colors.none }
+                    -- highlights.CursorLine = { bg = colors.none }
                 end,
             })
 
@@ -90,35 +104,21 @@ return {
         priority = 1000,
         config = function()
             require("solarized-osaka").setup({
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                transparent = true, -- Enable this to disable setting the background color
-                terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
+                transparent = true,
+                terminal_colors = true,
                 styles = {
-                    -- Style to be applied to different syntax groups
-                    -- Value is any valid attr-list value for `:help nvim_set_hl`
                     comments = { italic = true },
                     keywords = { bold = false, italic = false },
                     functions = { bold = false, italic = true },
                     variables = {},
 
-                    -- Background styles. Can be "dark", "transparent" or "normal"
-                    sidebars = "transparent", -- style for sidebars, see below
-                    floats = "transparent", -- style for floating windows
+                    sidebars = "transparent",
+                    floats = "transparent",
                 },
-                sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-                day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
-                hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-                dim_inactive = false, -- dims inactive windows
-                lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
 
-                --- You can override specific color groups to use other groups or a hex color
-                --- function will be called with a ColorScheme table
                 ---@param colors ColorScheme
                 on_colors = function(_) end,
 
-                --- You can override specific highlights to use other groups or a hex color
-                --- function will be called with a Highlights and ColorScheme table
                 ---@param highlights Highlights
                 ---@param colors ColorScheme
                 on_highlights = function(_, _) end,
@@ -128,27 +128,22 @@ return {
     },
     {
         "marko-cerovac/material.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require("material").setup({
                 contrast = {
-                    terminal = false, -- Enable contrast for the built-in terminal
-                    sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
-                    floating_windows = false, -- Enable contrast for floating windows
-                    cursor_line = false, -- Enable darker background for the cursor line
-                    lsp_virtual_text = false, -- Enable contrasted background for lsp virtual text
-                    non_current_windows = false, -- Enable contrasted background for non-current windows
-                    filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
+                    terminal = false,
+                    sidebars = false,
+                    floating_windows = false,
+                    cursor_line = false,
+                    lsp_virtual_text = false,
+                    non_current_windows = false,
+                    filetypes = {},
                 },
 
-                styles = { -- Give comments style such as bold, italic, underline etc.
+                styles = {
                     comments = { italic = true },
-                    strings = {},
-                    keywords = {},
-                    functions = {},
-                    variables = {},
-                    operators = {},
                     types = { bold = true },
                 },
 
@@ -162,16 +157,16 @@ return {
                 },
 
                 disable = {
-                    colored_cursor = false, -- Disable the colored cursor
-                    borders = false, -- Disable borders between verticaly split windows
-                    background = true, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
-                    term_colors = false, -- Prevent the theme from setting terminal colors
-                    eob_lines = false, -- Hide the end-of-buffer lines
+                    colored_cursor = false,
+                    borders = false,
+                    background = true,
+                    term_colors = false,
+                    eob_lines = false,
                 },
 
-                custom_colors = nil, -- If you want to override the default colors, set this to a function
+                custom_colors = nil,
 
-                custom_highlights = {}, -- Overwrite highlights with your own
+                custom_highlights = {},
             })
 
             vim.g.material_style = "deep ocean"

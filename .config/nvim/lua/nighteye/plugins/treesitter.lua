@@ -44,6 +44,7 @@ return {
                 "php",
                 "prisma",
                 "python",
+                "ruby",
                 "typescript",
                 "tsx",
                 "vim",
