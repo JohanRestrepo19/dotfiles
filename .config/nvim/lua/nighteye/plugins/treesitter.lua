@@ -37,6 +37,7 @@ return {
                 "css",
                 "gitcommit",
                 "html",
+                "http",
                 "javascript",
                 "json",
                 "markdown",
@@ -49,6 +50,7 @@ return {
                 "tsx",
                 "vim",
                 "vimdoc",
+                "xml",
                 "yaml",
             },
 

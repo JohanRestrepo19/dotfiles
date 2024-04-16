@@ -23,7 +23,7 @@ return {
                 },
 
                 highlight_groups = {
-                    -- CursorLine = { bg = "none" },
+                    CursorLine = { bg = "none" },
                     StatusLine = { bg = "surface" },
                     Pmenu = { bg = "surface" },
                 },
@@ -99,36 +99,38 @@ return {
         end,
     },
     {
-        "craftzdog/solarized-osaka.nvim",
-        lazy = true,
+        "rebelot/kanagawa.nvim",
+        lazy = false,
         priority = 1000,
         config = function()
-            require("solarized-osaka").setup({
+            require("kanagawa").setup({
+                compile = false,
                 transparent = true,
-                terminal_colors = true,
-                styles = {
-                    comments = { italic = true },
-                    keywords = { bold = false, italic = false },
-                    functions = { bold = false, italic = true },
-                    variables = {},
-
-                    sidebars = "transparent",
-                    floats = "transparent",
+                colors = {
+                    theme = {
+                        all = { ui = { bg_gutter = "none" } },
+                    },
                 },
+                theme = "wave",
+                background = { dark = "wave", light = "lotus" },
 
-                ---@param colors ColorScheme
-                on_colors = function(_) end,
-
-                ---@param highlights Highlights
-                ---@param colors ColorScheme
-                on_highlights = function(_, _) end,
+                overrides = function(colors)
+                    local _ = colors.theme
+                    return {
+                        CursorLine = { bg = "none" },
+                        NormalFloat = { bg = "none" },
+                        FloatBorder = { bg = "none" },
+                        FloatTitle = { bg = "none" },
+                    }
+                end,
             })
-            vim.cmd.colorscheme("solarized-osaka")
+
+            vim.cmd.colorscheme("kanagawa-dragon")
         end,
     },
     {
         "marko-cerovac/material.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("material").setup({
