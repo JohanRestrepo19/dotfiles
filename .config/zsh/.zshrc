@@ -34,10 +34,11 @@ alias notes='nvim ~/Desktop/apuntes.md'
 alias dev='cd ~/Desktop/dev/'
 alias vim='nvim'
 
+# This loads nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# This loads rbenv
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
