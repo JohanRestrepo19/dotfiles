@@ -35,6 +35,7 @@ return {
                 "lua",
                 "c",
                 "css",
+                "dockerfile",
                 "gitcommit",
                 "html",
                 "http",
