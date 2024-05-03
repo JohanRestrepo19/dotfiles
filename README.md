@@ -1,11 +1,13 @@
-# dotfiles/.config/nvim
+# Dotfiles
+
+## Nvim config
 
 <a href="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim"><img src="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim"><img src="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim/badges/leaderkey?style=flat" /></a>
 <a href="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim"><img src="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim/badges/plugin-manager?style=flat" /></a>
 
 
-## Install Instructions
+### Install Instructions
 
  > Install requires Neovim 0.9+. Always review the code before installing a configuration.
 
@@ -21,76 +23,76 @@ Open Neovim with this config:
 NVIM_APPNAME=JohanRestrepo19/dotfiles/.config/nvim nvim
 ```
 
-## Plugins
+### Plugins
 
-### colorscheme
+#### colorscheme
 
 + [marko-cerovac/material.nvim](https://dotfyle.com/plugins/marko-cerovac/material.nvim)
 + [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
 + [craftzdog/solarized-osaka.nvim](https://dotfyle.com/plugins/craftzdog/solarized-osaka.nvim)
-### comment
+#### comment
 
 + [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
 + [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
 + [JoosepAlviste/nvim-ts-context-commentstring](https://dotfyle.com/plugins/JoosepAlviste/nvim-ts-context-commentstring)
-### completion
+#### completion
 
 + [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
-### editing-support
+#### editing-support
 
 + [folke/zen-mode.nvim](https://dotfyle.com/plugins/folke/zen-mode.nvim)
 + [windwp/nvim-ts-autotag](https://dotfyle.com/plugins/windwp/nvim-ts-autotag)
 + [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
-### file-explorer
+#### file-explorer
 
 + [nvim-neo-tree/neo-tree.nvim](https://dotfyle.com/plugins/nvim-neo-tree/neo-tree.nvim)
-### formatting
+#### formatting
 
 + [stevearc/conform.nvim](https://dotfyle.com/plugins/stevearc/conform.nvim)
-### fuzzy-finder
+#### fuzzy-finder
 
 + [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
-### git
+#### git
 
 + [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
-### lsp
+#### lsp
 
 + [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
 + [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
 + [j-hui/fidget.nvim](https://dotfyle.com/plugins/j-hui/fidget.nvim)
-### lsp-installer
+#### lsp-installer
 
 + [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
-### markdown-and-latex
+#### markdown-and-latex
 
 + [iamcco/markdown-preview.nvim](https://dotfyle.com/plugins/iamcco/markdown-preview.nvim)
-### marks
+#### marks
 
 + [ThePrimeagen/harpoon](https://dotfyle.com/plugins/ThePrimeagen/harpoon)
-### nvim-dev
+#### nvim-dev
 
 + [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
 + [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
-### plugin-manager
+#### plugin-manager
 
 + [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
-### preconfigured
+#### preconfigured
 
 + [LazyVim/LazyVim](https://dotfyle.com/plugins/LazyVim/LazyVim)
-### snippet
+#### snippet
 
 + [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
 + [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
-### statusline
+#### statusline
 
 + [rebelot/heirline.nvim](https://dotfyle.com/plugins/rebelot/heirline.nvim)
-### syntax
+#### syntax
 
 + [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
-### tabline
+#### tabline
 
 + [akinsho/bufferline.nvim](https://dotfyle.com/plugins/akinsho/bufferline.nvim)
-## Language Servers
+### Language Servers
 
 + cssls
 + eslint
