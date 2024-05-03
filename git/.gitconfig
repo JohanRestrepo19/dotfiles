@@ -1,0 +1,18 @@
+[alias]
+    lod = "log --oneline --all --decorate --graph --mailmap"
+    lsd = "log --pretty=short --all --decorate --graph --mailmap"
+    co = "checkout"
+    st = "status"
+    fo = "fetch origin"
+    adp = "add -p"
+[core]
+    editor = nvim
+[user]
+    email = 62318029+JohanRestrepo19@users.noreply.github.com
+    name = Johan Restrepo
+[github]
+    user = JohanRestrepo19
+[credential]
+    helper = store
+[init]
+    defaultBranch = main
