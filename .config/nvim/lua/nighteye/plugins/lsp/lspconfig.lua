@@ -68,6 +68,7 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "cssls",
+                "dockerls",
                 "html",
                 "intelephense",
                 "lua_ls",
