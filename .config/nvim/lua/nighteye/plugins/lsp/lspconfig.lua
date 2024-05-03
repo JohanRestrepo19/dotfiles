@@ -73,11 +73,9 @@ return {
                 "lua_ls",
                 "prismals",
                 "pyright",
-                "solargraph",
                 "tailwindcss",
                 "tsserver",
                 "eslint",
-                "ruff_lsp",
             },
             automatic_installation = true,
             handlers = {

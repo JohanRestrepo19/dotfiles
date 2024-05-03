@@ -43,22 +43,6 @@ return {
             t = "TERMINAL",
         }
 
-        local mode_colors = {
-            n = "normal_mode",
-            i = "insert_mode",
-            v = "visual_mode",
-            V = "visual_mode",
-            ["\22"] = "other_mode",
-            c = "replace_mode",
-            s = "other_mode",
-            S = "other_mode",
-            ["\19"] = "other_mode",
-            R = "replace_mode",
-            r = "replace_mode",
-            ["!"] = "normal_mode",
-            t = "normal_mode",
-        }
-
         --- @param hl_tbl table | nil
         --- @return table
         local function make_hl(hl_tbl)
@@ -75,7 +59,6 @@ return {
         local ViMode = {
             static = {
                 mode_names = mode_names,
-                mode_colors = mode_colors,
             },
             update = {
                 "ModeChanged",
@@ -92,50 +75,6 @@ return {
             end,
             provider = function(self)
                 return self.mode_names[self.mode]
-            end,
-        }
-
-        local BaseSectionSeparator = {
-            static = {
-                mode_names = mode_names,
-                mode_colors = mode_colors,
-            },
-            hl = function(self)
-                local mode = vim.fn.mode():sub(1, 1)
-                return make_hl({ fg = self.mode_colors[mode], bg = "none" })
-            end,
-        }
-
-        local LeftSectionSeparator = utils.insert(BaseSectionSeparator, {
-            provider = "",
-        })
-
-        local RightSectionSeparator = utils.insert(BaseSectionSeparator, {
-            provider = "",
-        })
-
-        local ColoredViMode = vim.tbl_deep_extend("force", ViMode, {
-            hl = function(self)
-                local mode = self.mode:sub(1, 1)
-                return make_hl({ bg = self.mode_colors[mode], fg = "statusline_font", bold = true })
-            end,
-
-            provider = function(self)
-                return " " .. self.mode_names[self.mode] .. " "
-            end,
-        })
-
-        local ColoredFileType = {
-            static = {
-                mode_names = mode_names,
-                mode_colors = mode_colors,
-            },
-            hl = function(self)
-                local mode = vim.fn.mode():sub(1, 1)
-                return make_hl({ bg = self.mode_colors[mode], fg = "statusline_font", bold = true })
-            end,
-            provider = function()
-                return " " .. string.upper(vim.bo.filetype) .. " "
             end,
         }
 
@@ -273,9 +212,9 @@ return {
         local Space = { provider = " " }
 
         -- stylua: ignore
-        local LeftBlock = { ColoredViMode, LeftSectionSeparator, Space, Git, Space, Diagnostics, Space }
+        local LeftBlock = { ViMode, Space, Git, Space, Diagnostics, Space }
         local CenterBlock = { FilenameBlock, Space }
-        local RightBlock = { Ruler, Space, FileEncoding, Space, RightSectionSeparator, ColoredFileType }
+        local RightBlock = { Ruler, Space, FileEncoding, Space, FileType }
 
         -- stylua: ignore
         local StatusLine = {
@@ -288,23 +227,8 @@ return {
 
         local function setup_colors()
             return {
-                bright_bg = utils.get_highlight("Folded").bg,
-                bright_fg = utils.get_highlight("Folded").fg,
-                red = utils.get_highlight("DiagnosticError").fg,
-                dark_red = utils.get_highlight("DiffDelete").bg,
-                green = utils.get_highlight("String").fg,
-                blue = utils.get_highlight("Function").fg,
-                gray = utils.get_highlight("NonText").fg,
-                orange = utils.get_highlight("Constant").fg,
-                purple = utils.get_highlight("Statement").fg,
                 cyan = utils.get_highlight("Special").fg,
-
-                normal_mode = utils.get_highlight("MiniStatuslineModeNormal").bg,
-                insert_mode = utils.get_highlight("MiniStatuslineModeInsert").bg,
-                other_mode = utils.get_highlight("MiniStatuslineModeOther").bg,
-                replace_mode = utils.get_highlight("MiniStatuslineModeReplace").bg,
-                visual_mode = utils.get_highlight("MiniStatuslineModeVisual").bg,
-                statusline_font = utils.get_highlight("MiniStatuslineModeNormal").fg,
+                orange = utils.get_highlight("Constant").fg,
             }
         end
 

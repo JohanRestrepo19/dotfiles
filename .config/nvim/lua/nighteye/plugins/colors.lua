@@ -34,7 +34,7 @@ return {
     },
     {
         "folke/tokyonight.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             local bg = "#011628"
@@ -159,7 +159,7 @@ return {
                 },
 
                 disable = {
-                    colored_cursor = false,
+                    colored_cursor = true,
                     borders = false,
                     background = true,
                     term_colors = false,
@@ -173,6 +173,31 @@ return {
 
             vim.g.material_style = "deep ocean"
             vim.cmd.colorscheme("material")
+        end,
+    },
+    {
+        "sainnhe/gruvbox-material",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd([[
+                    " Important!!
+                    if has('termguicolors')
+                    set termguicolors
+                    endif
+
+                    set background=dark
+
+                    let g:gruvbox_material_background = 'hard'
+                    let g:gruvbox_material_transparent_background = 1
+                    let g:gruvbox_material_float_style = 'dim'
+                    let g:gruvbox_material_diagnostic_virtual_text = 'colored'
+
+                    " For better performance
+                    let g:gruvbox_material_better_performance = 1
+            ]])
+
+            vim.cmd.colorscheme("gruvbox-material")
         end,
     },
 }
