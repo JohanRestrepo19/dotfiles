@@ -177,7 +177,7 @@ return {
     },
     {
         "sainnhe/gruvbox-material",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             vim.cmd([[
@@ -198,6 +198,22 @@ return {
             ]])
 
             vim.cmd.colorscheme("gruvbox-material")
+        end,
+    },
+    {
+        "ellisonleao/gruvbox.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("gruvbox").setup({
+                contrast = "hard",
+                transparent_mode = true,
+                overrides = {
+                    StatusLine = { bg = "#282828", fg = "#7c6f64" },
+                },
+            })
+
+            vim.cmd.colorscheme("gruvbox")
         end,
     },
 }

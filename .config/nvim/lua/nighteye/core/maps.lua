@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 -- vim.g.maplocalleader = " "
 
--- keymap("n", "<leader>w", ":w<cr>", opts)
+keymap("n", "<leader>w", ":w<cr>", opts)
 
 -- Increment/decrement
 keymap("n", "+", "<C-a>", opts)

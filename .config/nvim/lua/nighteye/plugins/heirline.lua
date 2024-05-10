@@ -129,6 +129,7 @@ return {
                     return vim.bo.modified
                 end,
                 provider = "[+] ",
+                hl = make_hl(),
             },
             {
                 condition = function()
@@ -169,6 +170,7 @@ return {
             -- %P = percentage through file of displayed window
             -- provider = "%7(%l/%3L%):%2c %P",
             provider = "[%l, %c]",
+            hl = make_hl(),
         }
 
         local Diagnostics = {
@@ -206,10 +208,11 @@ return {
             provider = function(self)
                 return " " .. self.status_dict.head
             end,
+            hl = make_hl(),
         }
 
-        local Align = { provider = "%=" }
-        local Space = { provider = " " }
+        local Align = { provider = "%=", hl = make_hl() }
+        local Space = { provider = " ", hl = make_hl() }
 
         -- stylua: ignore
         local LeftBlock = { ViMode, Space, Git, Space, Diagnostics, Space }
