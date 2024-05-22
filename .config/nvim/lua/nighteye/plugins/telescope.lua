@@ -117,7 +117,7 @@ return {
         local opts = { noremap = true, silent = true }
 
         vim.keymap.set("n", "<c-p>", builtin.git_files, opts)
-        vim.keymap.set("n", "<leader>pf", builtin.find_files, opts)
+        vim.keymap.set("n", "<c-f>", builtin.find_files, opts)
         vim.keymap.set("n", "<leader>ft", builtin.live_grep, opts)
         vim.keymap.set("n", "<leader>fw", builtin.grep_string, opts)
         vim.keymap.set("n", "<leader>fW", function()
