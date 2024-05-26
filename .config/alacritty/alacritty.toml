@@ -1,15 +1,15 @@
-# import = ["/home/nighteye/.config/alacritty/themes/ayu.toml"]
-import = ["/home/nighteye/.config/alacritty/themes/gruvbox-material/hard.toml"]
+import = ["/home/nighteye/.config/alacritty/themes/tokyonight.toml"]
 
 [font]
+normal = { family = "MesloLGSDZ Nerd Font", style = "Regular" }
+# normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
+# normal = { family = "Caskaydia Mono Nerd Font", style = "Regular" }
+
 size = 11.5
 
-[font.normal]
-family = "MesloLGSDZ Nerd Font"
-style = "Regular"
-
 [window]
-opacity = 0.98
+opacity = 0.90
+dynamic_padding = true
 
 [window.dimensions]
 columns = 98
