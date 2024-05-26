@@ -40,6 +40,8 @@ keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "}", "<C-d>zz")
 keymap("n", "{", "<C-u>zz")
+keymap("n", "j", "gj")
+keymap("n", "k", "gk")
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)

@@ -34,7 +34,7 @@ return {
     },
     {
         "folke/tokyonight.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require("tokyonight").setup({
@@ -64,7 +64,7 @@ return {
     },
     {
         "rebelot/kanagawa.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("kanagawa").setup({
