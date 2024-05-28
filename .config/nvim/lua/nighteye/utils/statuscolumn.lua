@@ -1,5 +1,4 @@
 -- NOTE: Code extracted from https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/util/ui.lua
--- TODO: Translante this signcolumn to Heirline SignColumn Component.
 
 ---@class lazyvim.util.ui
 local M = {}

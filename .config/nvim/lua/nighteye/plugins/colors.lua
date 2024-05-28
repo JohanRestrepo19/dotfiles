@@ -187,7 +187,7 @@ return {
         priority = 1000,
         lazy = true,
         config = function()
-            require("solarized-osaka").setup({ })
+            require("solarized-osaka").setup({})
             vim.cmd.colorscheme("solarized-osaka")
         end,
     },

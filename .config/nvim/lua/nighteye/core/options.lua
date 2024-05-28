@@ -55,4 +55,4 @@ vim.opt.listchars = {
     -- eol = "↲",
 }
 
--- vim.opt.statuscolumn = [[%!v:lua.require'nighteye.core.utils'.statuscolumn()]]
+-- vim.opt.statuscolumn = [[%!v:lua.require'nighteye.utils.statuscolumn'.statuscolumn()]]
