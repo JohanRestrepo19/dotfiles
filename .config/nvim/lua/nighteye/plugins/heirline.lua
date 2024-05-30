@@ -1,7 +1,7 @@
 return {
     "rebelot/heirline.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    lazy = true,
+    lazy = false,
     config = function()
         local conditions = require("heirline.conditions")
         local utils = require("heirline.utils")

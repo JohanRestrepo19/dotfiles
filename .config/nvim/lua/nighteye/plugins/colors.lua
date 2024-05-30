@@ -6,26 +6,22 @@ return {
         as = "rose-pine",
         dir = "~/Desktop/dev/lua-plugins/rose-pine",
         dev = false,
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             local rose_pine = require("rose-pine")
             rose_pine.setup({
+                dark_variant = "moon",
                 styles = {
-                    -- comments = { italic = true },
-                    -- keywords = { bold = false, italic = false },
-                    -- functions = { bold = true, italic = false },
-                    -- variables = {},
-
-                    -- bold = false,
-                    -- italic = false,
+                    italic = false,
+                    bold = true,
                     transparency = true,
                 },
 
                 highlight_groups = {
-                    CursorLine = { bg = "none" },
+                    -- CursorLine = { bg = "none" },
                     StatusLine = { bg = "surface" },
-                    Pmenu = { bg = "surface" },
+                    -- Pmenu = { bg = "surface" },
                 },
             })
 
@@ -34,7 +30,7 @@ return {
     },
     {
         "folke/tokyonight.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("tokyonight").setup({
