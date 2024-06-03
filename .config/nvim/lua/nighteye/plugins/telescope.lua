@@ -30,7 +30,7 @@ return {
                 layout_config = {
                     width = 0.95,
                     height = 0.85,
-                    prompt_position = "bottom",
+                    prompt_position = "top",
                     horizontal = {
                         preview_width = function(_, cols, _)
                             if cols > 200 then

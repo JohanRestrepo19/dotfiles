@@ -6,7 +6,7 @@ return {
         as = "rose-pine",
         dir = "~/Desktop/dev/lua-plugins/rose-pine",
         dev = false,
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             local rose_pine = require("rose-pine")
@@ -51,7 +51,7 @@ return {
                 on_highlights = function(highlights, colors)
                     highlights.NormalFloat = { bg = colors.bg_dark }
                     highlights.WinSeparator = { fg = colors.fg }
-                    highlights.CursorLine = { bg = colors.none }
+                    -- highlights.CursorLine = { bg = colors.none }
                 end,
             })
 
@@ -60,7 +60,7 @@ return {
     },
     {
         "rebelot/kanagawa.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require("kanagawa").setup({
@@ -71,7 +71,7 @@ return {
                         all = { ui = { bg_gutter = "none" } },
                     },
                 },
-                theme = "dragon",
+                theme = "wave",
                 background = { dark = "wave", light = "lotus" },
 
                 overrides = function(colors)
@@ -85,7 +85,7 @@ return {
                 end,
             })
 
-            vim.cmd.colorscheme("kanagawa-dragon")
+            vim.cmd.colorscheme("kanagawa")
         end,
     },
     {
