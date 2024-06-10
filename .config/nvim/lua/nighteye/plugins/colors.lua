@@ -60,7 +60,7 @@ return {
     },
     {
         "rebelot/kanagawa.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("kanagawa").setup({
@@ -161,22 +161,27 @@ return {
         end,
     },
     {
-        "ellisonleao/gruvbox.nvim",
-        lazy = true,
+        "sainnhe/everforest",
         priority = 1000,
+        lazy = false,
         config = function()
-            require("gruvbox").setup({
-                contrast = "hard",
-                transparent_mode = true,
-                overrides = {
-                    StatusLine = { bg = "#282828", fg = "#7c6f64" },
-                    CursorLine = { bg = "none" },
-                    CursorLineNr = { bg = "none" },
-                },
-            })
+            vim.cmd([[
+                    " Important!!
+                    if has('termguicolors')
+                    set termguicolors
+                    endif
 
-            vim.cmd.colorscheme("gruvbox")
-        end,
+                    set background=dark
+
+                    let g:everforest_background = 'hard'
+                    let g:everforest_transparent_background = 1
+                    let g:everforest_diagnostic_virtual_text = 'colored'
+
+                    " For better performance
+                    let g:everforest_better_performance = 1
+            ]])
+            vim.cmd.colorscheme("everforest")
+        end
     },
     {
         "craftzdog/solarized-osaka.nvim",

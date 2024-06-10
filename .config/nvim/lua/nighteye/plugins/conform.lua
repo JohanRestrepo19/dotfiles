@@ -1,5 +1,6 @@
 return {
     "stevearc/conform.nvim",
+    event = { "BufWritePre" },
     config = function()
         local conform = require("conform")
 
@@ -13,13 +14,16 @@ return {
                 typescriptreact = { "prettier" },
                 markdown = { "prettier" },
             },
+            format_on_save = function(bufnr)
+                if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+                    return
+                end
+
+                return { lsp_fallback = true, timeout_ms = 500 }
+            end,
         })
 
-        vim.keymap.set("n", "<leader>ff", function()
-            conform.format({
-                async = true,
-                lsp_fallback = true,
-            })
-        end, { noremap = true, silent = true })
+        vim.keymap.set("n", "<leader>fe", ":FormatEnable<cr>")
+        vim.keymap.set("n", "<leader>fd", ":FormatDisable<cr>")
     end,
 }
