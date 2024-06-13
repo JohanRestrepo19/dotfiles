@@ -3,10 +3,10 @@
 
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
-plug "zap-zsh/zap-prompt"
+# plug "zap-zsh/zap-prompt"
 plug "zap-zsh/exa"
 
-# plug "spaceship-prompt/spaceship-prompt"
+plug "spaceship-prompt/spaceship-prompt"
 
 # Load and initialise completion system
 autoload -Uz compinit
