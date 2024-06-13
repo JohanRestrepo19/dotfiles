@@ -30,7 +30,6 @@ keymap("n", "sJ", "<C-w>J", opts)
 keymap("n", "sK", "<C-w>K", opts)
 keymap("n", "sL", "<C-w>L", opts)
 
-
 -- Move Tab
 keymap("n", "<S-Tab>", ":tabprev<cr>", opts)
 keymap("n", "<tab>", ":tabnext<cr>", opts)

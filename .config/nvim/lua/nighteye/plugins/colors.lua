@@ -30,7 +30,7 @@ return {
     },
     {
         "folke/tokyonight.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require("tokyonight").setup({
@@ -39,8 +39,8 @@ return {
                 transparent = true,
                 terminal_colors = true,
                 styles = {
-                    sidebars = "transparent",
-                    floats = "transparent",
+                    sidebars = "dark",
+                    floats = "dark",
                 },
 
                 ---@param colors ColorScheme
@@ -50,12 +50,12 @@ return {
                 ---@param colors ColorScheme
                 on_highlights = function(highlights, colors)
                     highlights.NormalFloat = { bg = colors.bg_dark }
-                    highlights.WinSeparator = { fg = colors.fg }
-                    -- highlights.CursorLine = { bg = colors.none }
+                    -- highlights.WinSeparator = { fg = colors.fg }
+                    highlights.CursorLine = { bg = colors.none }
                 end,
             })
 
-            vim.cmd.colorscheme("tokyonight")
+            vim.cmd.colorscheme("tokyonight-night")
         end,
     },
     {
@@ -163,7 +163,7 @@ return {
     {
         "sainnhe/everforest",
         priority = 1000,
-        lazy = false,
+        lazy = true,
         config = function()
             vim.cmd([[
                     " Important!!
@@ -181,7 +181,7 @@ return {
                     let g:everforest_better_performance = 1
             ]])
             vim.cmd.colorscheme("everforest")
-        end
+        end,
     },
     {
         "craftzdog/solarized-osaka.nvim",

@@ -1,5 +1,3 @@
-local is_inside_work_tree = {}
-
 return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
