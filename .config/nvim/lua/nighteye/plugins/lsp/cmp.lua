@@ -77,7 +77,7 @@ return {
                 select = false,
             },
             experimental = {
-                ghost_text = false,
+                ghost_text = true,
             },
             window = {
                 -- completion = cmp.config.window.bordered(),
