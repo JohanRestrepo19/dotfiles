@@ -1,12 +1,10 @@
 return {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-        local todo_comments = require("todo-comments")
-        local opts = { noremap = true, silent = true }
-
-        todo_comments.setup({})
-
-        vim.keymap.set("n", "<leader>tl", ":TodoTelescope<cr>", opts)
-    end,
+  "folke/todo-comments.nvim",
+  event = "VimEnter",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  config = function()
+    local todo_comments = require("todo-comments")
+    todo_comments.setup()
+    vim.keymap.set("n", "<leader>tl", ":TodoTelescope initial_mode=normal<cr>", { noremap = true, silent = true })
+  end,
 }

@@ -56,7 +56,6 @@ keymap("n", "<leader><Tab>", ": bp<CR> :bd#<CR>")
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "ññ", "<ESC>", opts)
-keymap("t", "ññ", "<C-\\><C-n>", opts)
 
 keymap("i", "<C-BS>", "<C-w>", opts)
 
@@ -70,11 +69,11 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
 -- Alternate word wrapping
 keymap("n", "<leader>tw", function()
-    if vim.api.nvim_get_option_value("wrap", {}) then
-        vim.cmd("set nowrap")
-    else
-        vim.cmd("set wrap")
-    end
+  if vim.api.nvim_get_option_value("wrap", {}) then
+    vim.cmd("set nowrap")
+  else
+    vim.cmd("set wrap")
+  end
 end, opts)
 
 -- Delete complete word in insert mode

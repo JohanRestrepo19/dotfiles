@@ -5,7 +5,4 @@
 -- ██║██║ ╚████║██║   ██║██╗███████╗╚██████╔╝██║  ██║
 -- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
--- [ ] Install and try neogit.
--- [ ] Rethink cmp mappings.
-
 require("nighteye")

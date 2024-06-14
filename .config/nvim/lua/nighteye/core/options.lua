@@ -21,19 +21,20 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
 -- Tabs related opts
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 --end
 vim.opt.timeoutlen = 1000
 vim.opt.undofile = true
 vim.opt.updatetime = 300
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.writebackup = false
 vim.opt.backspace = "indent,eol,start"
 vim.opt.signcolumn = "yes"
 
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.shortmess:append("c")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
@@ -49,10 +50,9 @@ vim.opt.path:append({ "**" })
 
 vim.opt.list = true
 vim.opt.listchars = {
-    tab = "» ",
-    trail = "·",
-    nbsp = "␣",
-    -- eol = "↲",
+  tab = "» ",
+  trail = "·",
+  nbsp = "␣",
 }
 
 -- vim.opt.statuscolumn = [[%!v:lua.require'nighteye.utils.statuscolumn'.statuscolumn()]]
