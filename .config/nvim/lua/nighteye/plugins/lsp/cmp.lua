@@ -6,6 +6,8 @@ return {
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-nvim-lua",
     "onsails/lspkind.nvim",
+    "saadparwaiz1/cmp_luasnip",
+    "rafamadriz/friendly-snippets",
     { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
   },
   event = "InsertEnter",
@@ -13,8 +15,7 @@ return {
     local cmp = require("cmp")
     local lspkind = require("lspkind")
 
-    -- TODO: Uncomment when lsp is ready
-    -- require("luasnip.loaders.from_vscode").lazy_load()
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
       snippet = {
@@ -52,20 +53,19 @@ return {
         { name = "path" },
       }),
 
-      -- TODO: Improve cmp looking reading lspkind documentation
       formatting = {
-        fields = { "abbr", "kind", "menu" },
+        fields = { "kind", "abbr", "menu" },
         format = lspkind.cmp_format({
           mode = "symbol_text",
           maxwidth = 50,
           ellipsis_char = "...",
           show_labelDetails = true,
           menu = {
-            nvim_lsp = "[lsp]",
-            nvim_lua = "[api]",
-            luasnip = "[snip]",
-            buffer = "[buf]",
-            path = "[path]",
+            nvim_lsp = "[LSP]",
+            nvim_lua = "[API]",
+            luasnip = "[SNIP]",
+            buffer = "[BUF]",
+            path = "[PATH]",
           },
         }),
       },
