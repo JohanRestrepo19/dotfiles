@@ -1,107 +1,113 @@
-# nvim/
+# dotfiles/.config/nvim
 
-<a href="https://dotfyle.com/JohanRestrepo19/nvim"><img src="https://dotfyle.com/JohanRestrepo19/nvim/badges/plugins?style=flat" /></a>
-<a href="https://dotfyle.com/JohanRestrepo19/nvim"><img src="https://dotfyle.com/JohanRestrepo19/nvim/badges/leaderkey?style=flat" /></a>
-<a href="https://dotfyle.com/JohanRestrepo19/nvim"><img src="https://dotfyle.com/JohanRestrepo19/nvim/badges/plugin-manager?style=flat" /></a>
-
+<a href="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim"><img src="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim/badges/plugins?style=flat" /></a>
+<a href="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim"><img src="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim/badges/leaderkey?style=flat" /></a>
+<a href="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim"><img src="https://dotfyle.com/JohanRestrepo19/dotfiles-config-nvim/badges/plugin-manager?style=flat" /></a>
 
 ## Install Instructions
 
- > Install requires Neovim 0.9+. Always review the code before installing a configuration.
+> Install requires Neovim 0.9+. Always review the code before installing a configuration.
 
 Clone the repository and install the plugins:
 
 ```sh
-git clone git@github.com:JohanRestrepo19/nvim ~/.config/JohanRestrepo19/nvim
-NVIM_APPNAME=JohanRestrepo19/nvim/ nvim --headless +"Lazy! sync" +qa
+git clone git@github.com:JohanRestrepo19/dotfiles ~/.config/JohanRestrepo19/dotfiles
 ```
 
 Open Neovim with this config:
 
 ```sh
-NVIM_APPNAME=JohanRestrepo19/nvim/ nvim
+NVIM_APPNAME=JohanRestrepo19/dotfiles/.config/nvim nvim
 ```
 
 ## Plugins
 
 ### colorscheme
 
-+ [EdenEast/nightfox.nvim](https://dotfyle.com/plugins/EdenEast/nightfox.nvim)
-+ [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
-+ [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
-+ [rebelot/kanagawa.nvim](https://dotfyle.com/plugins/rebelot/kanagawa.nvim)
-+ [rose-pine/neovim](https://dotfyle.com/plugins/rose-pine/neovim)
-+ [craftzdog/solarized-osaka.nvim](https://dotfyle.com/plugins/craftzdog/solarized-osaka.nvim)
+- [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
+
 ### comment
 
-+ [JoosepAlviste/nvim-ts-context-commentstring](https://dotfyle.com/plugins/JoosepAlviste/nvim-ts-context-commentstring)
-+ [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
-+ [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
+- [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
+- [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
+- [JoosepAlviste/nvim-ts-context-commentstring](https://dotfyle.com/plugins/JoosepAlviste/nvim-ts-context-commentstring)
+
 ### completion
 
-+ [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
+- [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
+
 ### editing-support
 
-+ [windwp/nvim-ts-autotag](https://dotfyle.com/plugins/windwp/nvim-ts-autotag)
-+ [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
+- [HiPhish/rainbow-delimiters.nvim](https://dotfyle.com/plugins/HiPhish/rainbow-delimiters.nvim)
+- [windwp/nvim-ts-autotag](https://dotfyle.com/plugins/windwp/nvim-ts-autotag)
+- [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
+
 ### file-explorer
 
-+ [nvim-neo-tree/neo-tree.nvim](https://dotfyle.com/plugins/nvim-neo-tree/neo-tree.nvim)
+- [nvim-neo-tree/neo-tree.nvim](https://dotfyle.com/plugins/nvim-neo-tree/neo-tree.nvim)
+
 ### formatting
 
-+ [stevearc/conform.nvim](https://dotfyle.com/plugins/stevearc/conform.nvim)
+- [stevearc/conform.nvim](https://dotfyle.com/plugins/stevearc/conform.nvim)
+
 ### fuzzy-finder
 
-+ [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
+- [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
+
 ### git
 
-+ [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
+- [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
+
+### icon
+
+- [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
+
 ### lsp
 
-+ [j-hui/fidget.nvim](https://dotfyle.com/plugins/j-hui/fidget.nvim)
-+ [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
-+ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
+- [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
+- [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
+- [j-hui/fidget.nvim](https://dotfyle.com/plugins/j-hui/fidget.nvim)
+
 ### lsp-installer
 
-+ [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
-### markdown-and-latex
+- [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
 
-+ [iamcco/markdown-preview.nvim](https://dotfyle.com/plugins/iamcco/markdown-preview.nvim)
 ### marks
 
-+ [ThePrimeagen/harpoon](https://dotfyle.com/plugins/ThePrimeagen/harpoon)
+- [ThePrimeagen/harpoon](https://dotfyle.com/plugins/ThePrimeagen/harpoon)
+
 ### nvim-dev
 
-+ [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
-+ [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
+- [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
+- [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
+
 ### plugin-manager
 
-+ [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
+- [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
+
 ### snippet
 
-+ [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
-+ [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
+- [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
+- [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
+
 ### statusline
 
-+ [rebelot/heirline.nvim](https://dotfyle.com/plugins/rebelot/heirline.nvim)
+- [rebelot/heirline.nvim](https://dotfyle.com/plugins/rebelot/heirline.nvim)
+- [b0o/incline.nvim](https://dotfyle.com/plugins/b0o/incline.nvim)
+
 ### syntax
 
-+ [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
-### tabline
+- [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
 
-+ [akinsho/bufferline.nvim](https://dotfyle.com/plugins/akinsho/bufferline.nvim)
 ## Language Servers
 
-+ cssls
-+ eslint
-+ html
-+ intelephense
-+ lua_ls
-+ prismals
-+ pyright
-+ ruff_lsp
-+ tailwindcss
-+ tsserver
+- cssls
+- dockerls
+- eslint
+- html
+- lua_ls
+- pyright
+- tailwindcss
+- tsserver
 
-
- This readme was generated by [Dotfyle](https://dotfyle.com)
+This readme was generated by [Dotfyle](https://dotfyle.com)
