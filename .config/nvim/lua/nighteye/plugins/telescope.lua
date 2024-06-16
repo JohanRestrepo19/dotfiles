@@ -58,7 +58,23 @@ return {
         },
       },
 
-      pickers = {},
+      pickers = {
+        buffers = {
+          mappings = {
+            ["n"] = {
+              ["<Tab>"] = actions.delete_buffer,
+            },
+          },
+          initial_mode = "normal",
+        },
+        find_files = { hidden = true },
+        grep_string = { initial_mode = "normal" },
+        lsp_references = {
+          theme = "ivy",
+          initial_mode = "normal",
+          layout_config = { height = 0.5 },
+        },
+      },
 
       extensions = {
         file_browser = {
