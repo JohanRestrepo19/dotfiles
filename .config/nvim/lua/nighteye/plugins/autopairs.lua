@@ -12,7 +12,6 @@ return {
         },
       })
     end,
-    -- TODO: Implement event on cmp configuration
   },
   {
     "windwp/nvim-ts-autotag",
