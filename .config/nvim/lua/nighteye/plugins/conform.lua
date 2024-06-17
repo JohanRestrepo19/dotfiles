@@ -14,16 +14,18 @@ return {
         typescriptreact = { "prettier" },
         markdown = { "prettier" },
       },
-      format_on_save = function(bufnr)
-        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-          return
-        end
-
-        return { lsp_fallback = true, timeout_ms = 500 }
-      end,
     })
 
-    vim.keymap.set("n", "<leader>fe", ":FormatEnable<cr>")
-    vim.keymap.set("n", "<leader>fd", ":FormatDisable<cr>")
+    vim.api.nvim_create_user_command("Format", function(args)
+      local range = nil
+      if args.count ~= -1 then
+        local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+        range = {
+          start = { args.line1, 0 },
+          ["end"] = { args.line2, end_line:len() },
+        }
+      end
+      require("conform").format({ async = true, lsp_format = "fallback", range = range, timeout_ms = 500 })
+    end, { range = true })
   end,
 }
