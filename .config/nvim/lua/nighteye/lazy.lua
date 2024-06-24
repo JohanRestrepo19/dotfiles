@@ -12,8 +12,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { import = "nighteye.plugins" },
-  { import = "nighteye.plugins.lsp" },
-}, { change_detection = { notify = false } })
+  spec = {
+    { import = "nighteye.plugins" },
+    { import = "nighteye.plugins.lsp" },
+  },
+  change_detection = { notify = false },
+  rocks = { enable = false },
+})
 
 vim.keymap.set("n", "<leader>l", ":Lazy<cr>", { noremap = true, silent = true })
