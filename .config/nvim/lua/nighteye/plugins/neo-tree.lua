@@ -18,7 +18,7 @@ return {
   opts = {
     close_if_last_window = true,
     window = {
-      position = "left",
+      position = "right",
       mappings = {
         ["s"] = "",
         ["sv"] = "open_vsplit",
@@ -31,7 +31,7 @@ return {
         hide_gitignored = false,
       },
       follow_current_file = {
-        enabled = true,
+        enabled = false,
       },
     },
   },

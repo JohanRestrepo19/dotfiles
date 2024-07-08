@@ -64,7 +64,9 @@ return {
     local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
     -- NOTE: Mason related configs
-    require("mason").setup({})
+    require("mason").setup({
+      ui = { border = "rounded" }
+    })
     require("mason-lspconfig").setup({
       ensure_installed = {
         "cssls",

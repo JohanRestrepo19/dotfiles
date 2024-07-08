@@ -10,11 +10,11 @@ return {
       styles = { sidebars = "dark", floats = "dark" },
 
       on_highlights = function(highlights, colors)
-        highlights.NormalFloat = { bg = colors.bg_dark }
-        highlights.CursorLine = { bg = colors.none }
+        highlights.NormalFloat = { bg = colors.none }
+        -- highlights.CursorLine = { bg = colors.none }
       end,
     })
 
-    vim.cmd.colorscheme("tokyonight-night")
+    vim.cmd.colorscheme("tokyonight")
   end,
 }

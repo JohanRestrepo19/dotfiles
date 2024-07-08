@@ -17,7 +17,8 @@ require("lazy").setup({
     { import = "nighteye.plugins.lsp" },
   },
   change_detection = { notify = false },
-  rocks = { enable = false },
+  rocks = { enabled = false },
+  ui = { border = "rounded" }
 })
 
 vim.keymap.set("n", "<leader>l", ":Lazy<cr>", { noremap = true, silent = true })
