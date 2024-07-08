@@ -12,6 +12,8 @@
     name = Johan Restrepo
 [github]
     user = JohanRestrepo19
+[includeIf "gitdir:~/Desktop/work/"]
+    path = ~/Desktop/work/.gitconfig-work
 [credential]
     helper = store
 [init]
