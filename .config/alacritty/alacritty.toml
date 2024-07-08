@@ -1,16 +1,12 @@
 import = ["/home/nighteye/.config/alacritty/themes/tokyonight.toml"]
 
 [font]
-# normal = { family = "MesloLGSDZ Nerd Font" }
 normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
-# normal = { family = "Caskaydia Mono Nerd Font", style = "Regular" }
-# normal = { family = "Ubuntu Mono Nerd Font", style = "Regular" }
-# normal = { family = "Fira Code Nerd Font", style = "Regular" }
 
 # size = 11.5
 
 [window]
-opacity = 0.99
+opacity = 0.95
 dynamic_padding = true
 
 [window.dimensions]
