@@ -29,9 +29,10 @@ alias lt='eza --tree --level=3 --icons'
 
 alias kittyconfig='cd ~/.config/kitty/ && nvim kitty.conf'
 alias alconfig='cd ~/.config/alacritty/ && nvim alacritty.toml'
-alias zshconfig="cd ~/.config/zsh/ && nvim .zshrc"
 alias notes='nvim ~/Desktop/apuntes.md'
+alias wnotes='nvim ~/Desktop/work/notes.md'
 alias dev='cd ~/Desktop/dev/'
+alias work='cd ~/Desktop/work/'
 alias vim='nvim'
 
 # This loads nvm
