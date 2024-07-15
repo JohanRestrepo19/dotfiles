@@ -46,7 +46,7 @@ vim.opt.laststatus = 3
 vim.opt.backspace = "start,eol,indent"
 vim.opt.path:append({ "**" })
 
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 vim.opt.list = true
 vim.opt.listchars = {

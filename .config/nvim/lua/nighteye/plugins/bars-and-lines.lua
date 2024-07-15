@@ -19,11 +19,8 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
     opts = {
-      -- TODO: Set relative project file names and not just the filename
-      options = {
-        icons_enabled = false,
-        theme = "auto",
-      },
+      enabled = false,
+      indent = { char = "┊" },
     },
   },
 }
