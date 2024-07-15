@@ -1,9 +1,10 @@
 import = ["/home/nighteye/.config/alacritty/themes/tokyonight.toml"]
 
 [font]
-normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
+# normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
+normal = { family = "MesloLGS Nerd Font Mono", style = "Regular" }
 
-# size = 11.5
+size = 11.5
 
 [window]
 opacity = 0.95
