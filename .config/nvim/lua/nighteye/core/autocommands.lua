@@ -5,14 +5,6 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
--- Set wrap for markdown files
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  pattern = { "*.md", "*.mdx" },
-  callback = function()
-    vim.cmd("set wrap")
-  end,
-})
-
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",

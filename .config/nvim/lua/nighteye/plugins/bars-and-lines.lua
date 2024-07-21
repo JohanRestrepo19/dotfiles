@@ -10,7 +10,7 @@ return {
         always_show_bufferline = false,
         show_buffer_close_icons = false,
         show_close_icon = false,
-        color_icons = false,
+        color_icons = true,
       },
     },
   },
@@ -19,8 +19,20 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
     opts = {
-      enabled = false,
-      indent = { char = "┊" },
+      options = {
+        icons_enabled = true,
+        theme = "auto"
+      }
     },
   },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {
+      enabled = false,
+      indent = { char = "┊" },
+    }
+  }
 }
+
+
