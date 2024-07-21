@@ -1,8 +1,8 @@
-import = ["/home/nighteye/.config/alacritty/themes/tokyonight.toml"]
+import = ["/home/nighteye/.config/alacritty/themes/catppuccin/mocha.toml"]
 
 [font]
-# normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
-normal = { family = "MesloLGS Nerd Font Mono", style = "Regular" }
+normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
+# normal = { family = "MesloLGS Nerd Font Mono", style = "Regular" }
 
 size = 11.5
 
