@@ -1,13 +1,14 @@
-import = ["/home/nighteye/.config/alacritty/themes/catppuccin/mocha.toml"]
+import = ["/home/nighteye/.config/alacritty/themes/solarized-dark.toml"]
 
 [font]
 normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
-# normal = { family = "MesloLGS Nerd Font Mono", style = "Regular" }
 
+# normal = { family = "Fira Code Nerd Font", style = "Regular" }
 size = 11.5
 
+
 [window]
-opacity = 0.95
+opacity = 0.98
 dynamic_padding = true
 
 [window.dimensions]
