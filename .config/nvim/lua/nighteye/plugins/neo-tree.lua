@@ -31,7 +31,7 @@ return {
         hide_gitignored = false,
       },
       follow_current_file = {
-        enabled = false,
+        enabled = true,
       },
     },
   },

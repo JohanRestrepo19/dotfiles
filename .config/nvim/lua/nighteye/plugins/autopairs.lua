@@ -19,7 +19,7 @@ return {
   },
   {
     "HiPhish/rainbow-delimiters.nvim",
-    event = "VeryLazy",
-    -- lazy = true,
+    -- event = "VeryLazy",
+    lazy = true,
   },
 }

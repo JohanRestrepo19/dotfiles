@@ -9,8 +9,8 @@ return {
         variant = "main",
         styles = {
           italic = false,
-          transparency = true
-        }
+          transparency = true,
+        },
       })
 
       vim.cmd.colorscheme("rose-pine")
@@ -43,8 +43,8 @@ return {
         end,
         theme = "wave",
         background = {
-          dark = "wave"
-        }
+          dark = "wave",
+        },
       })
       vim.cmd.colorscheme("kanagawa")
     end,
@@ -64,7 +64,7 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
-    lazy = false,
+    lazy = true,
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
@@ -96,14 +96,26 @@ return {
         styles = { sidebars = "dark", floats = "dark" },
 
         on_highlights = function(highlights, colors)
-          highlights.NormalFloat = { bg = colors.none }
           highlights.WinSeparator = { fg = colors.cyan }
-          -- highlights.CursorLine = { bg = colors.none }
         end,
       })
 
-
       vim.cmd.colorscheme("tokyonight-night")
+    end,
+  },
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("solarized-osaka").setup({
+        transparent = true,
+        on_highlights = function(highlights)
+          highlights.CursorLine = { bg = highlights.BufferInactive.bg }
+        end,
+      })
+
+      vim.cmd.colorscheme("solarized-osaka")
     end,
   },
 }
