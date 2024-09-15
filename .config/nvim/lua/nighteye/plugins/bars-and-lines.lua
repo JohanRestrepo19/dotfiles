@@ -21,7 +21,7 @@ return {
     opts = {
       options = {
         icons_enabled = true,
-        theme = "solarized-osaka"
+        theme = "auto"
       }
     },
   },

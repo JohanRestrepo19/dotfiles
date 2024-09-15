@@ -74,11 +74,10 @@ return {
         "html",
         "lua_ls",
         "pyright",
-        "tailwindcss",
-        "tsserver",
+        "ts_ls",
         "eslint",
       },
-      automatic_installation = true,
+      automatic_installation = false,
       handlers = {
         function(server_name) -- default handler (optional)
           lspconfig[server_name].setup({

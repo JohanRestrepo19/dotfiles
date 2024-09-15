@@ -1,22 +1,5 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = true,
-    priority = 1000,
-    config = function()
-      require("rose-pine").setup({
-        variant = "main",
-        styles = {
-          italic = false,
-          transparency = true,
-        },
-      })
-
-      vim.cmd.colorscheme("rose-pine")
-    end,
-  },
-  {
     "rebelot/kanagawa.nvim",
     lazy = true,
     priority = 1000,
@@ -39,25 +22,14 @@ return {
             PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
             PmenuSbar = { bg = theme.ui.bg_m1 },
             PmenuThumb = { bg = theme.ui.bg_p2 },
+
+            -- CursorLine = { bg = "NONE" },
           }
         end,
-        theme = "wave",
-        background = {
-          dark = "wave",
-        },
+        theme = "dragon",
+        background = { dark = "dragon" },
       })
       vim.cmd.colorscheme("kanagawa")
-    end,
-  },
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = true,
-    priority = 1000,
-    config = function()
-      require("nightfox").setup({
-        options = { transparent = true },
-      })
-      vim.cmd.colorscheme("nordfox")
     end,
   },
   {
@@ -93,10 +65,11 @@ return {
         style = "night",
         transparent = true,
         terminal_colors = true,
-        styles = { sidebars = "dark", floats = "dark" },
+        styles = { sidebars = "transparent", floats = "transparent" },
 
         on_highlights = function(highlights, colors)
           highlights.WinSeparator = { fg = colors.cyan }
+          highlights.CursorLine = { fg = colors.none }
         end,
       })
 
@@ -105,7 +78,7 @@ return {
   },
   {
     "craftzdog/solarized-osaka.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("solarized-osaka").setup({
@@ -118,4 +91,16 @@ return {
       vim.cmd.colorscheme("solarized-osaka")
     end,
   },
+  {
+    "/rose-pine/neovim",
+    name = "rose-pine",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("rose-pine").setup({
+        styles = { italic = false, transparency = true }
+      })
+      vim.cmd.colorscheme("rose-pine")
+    end
+  }
 }

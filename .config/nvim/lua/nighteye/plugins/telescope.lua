@@ -20,26 +20,7 @@ return {
         path_display = { "truncate" },
         file_ignore_patterns = { ".git/", "^dist/", ".nuxt/", "^public/" },
         layout_strategy = "horizontal",
-        layout_config = {
-          width = 0.95,
-          height = 0.85,
-          prompt_position = "bottom",
-          horizontal = {
-            preview_width = function(_, cols, _)
-              if cols > 200 then
-                return math.floor(cols * 0.4)
-              else
-                return math.floor(cols * 0.6)
-              end
-            end,
-          },
-
-          vertical = {
-            width = 0.9,
-            height = 0.95,
-            preview_height = 0.5,
-          },
-        },
+        layout_config = { prompt_position = "top" },
         mappings = {
           n = {
             ["q"] = actions.close,
@@ -87,12 +68,7 @@ return {
           select_buffer = true,
           theme = "dropdown",
           layout_config = { height = 40, prompt_position = "top" },
-          mappings = {
-            ["n"] = {
-              -- your custom normal mode mappings
-              ["h"] = fb_actions.goto_parent_dir,
-            },
-          },
+          mappings = { ["n"] = { ["h"] = fb_actions.goto_parent_dir } },
         },
       },
     })
