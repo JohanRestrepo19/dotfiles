@@ -65,8 +65,9 @@ return {
 
     -- NOTE: Mason related configs
     require("mason").setup({
-      ui = { border = "rounded" }
+      ui = { border = "rounded" },
     })
+
     require("mason-lspconfig").setup({
       ensure_installed = {
         "cssls",

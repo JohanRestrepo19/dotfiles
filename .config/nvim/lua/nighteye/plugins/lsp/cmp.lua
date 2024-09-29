@@ -25,8 +25,12 @@ return {
       },
 
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        -- completion = cmp.config.window.bordered(),
+        -- documentation = cmp.config.window.bordered(),
+      },
+
+      experimental = {
+        ghost_text = true, -- this feature conflict with copilot.vim's preview.
       },
 
       mapping = cmp.mapping.preset.insert({

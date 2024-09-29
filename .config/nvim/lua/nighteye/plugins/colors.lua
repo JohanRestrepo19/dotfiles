@@ -65,7 +65,7 @@ return {
         style = "night",
         transparent = true,
         terminal_colors = true,
-        styles = { sidebars = "transparent", floats = "transparent" },
+        styles = { sidebars = "transparent", floats = "dark" },
 
         on_highlights = function(highlights, colors)
           highlights.WinSeparator = { fg = colors.cyan }
@@ -78,13 +78,13 @@ return {
   },
   {
     "craftzdog/solarized-osaka.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
       require("solarized-osaka").setup({
         transparent = true,
         on_highlights = function(highlights)
-          highlights.CursorLine = { bg = highlights.BufferInactive.bg }
+          highlights.CursorLine = { bg = highlights.none }
         end,
       })
 
@@ -94,13 +94,24 @@ return {
   {
     "/rose-pine/neovim",
     name = "rose-pine",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("rose-pine").setup({
-        styles = { italic = false, transparency = true }
+        styles = { italic = false, transparency = true },
       })
       vim.cmd.colorscheme("rose-pine")
-    end
-  }
+    end,
+  },
+  {
+    "Mofiqul/dracula.nvim",
+    priority = 1000,
+    lazy = true,
+    config = function()
+      require("dracula").setup({
+        transparent_bg = true
+      })
+      vim.cmd.colorscheme("dracula")
+    end,
+  },
 }
