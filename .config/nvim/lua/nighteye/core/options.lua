@@ -9,7 +9,7 @@ vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.mouse = "a"
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
 vim.opt.pumheight = 7
 vim.opt.scrolloff = 10
@@ -21,9 +21,9 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
 -- Tabs related opts
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 --end
 vim.opt.timeoutlen = 1000
@@ -50,9 +50,9 @@ vim.opt.path:append({ "**" })
 
 vim.opt.list = true
 vim.opt.listchars = {
-  tab = "» ",
-  trail = "·",
-  nbsp = "␣",
+    tab = "» ",
+    trail = "·",
+    nbsp = "␣",
 }
 
 -- vim.opt.statuscolumn = [[%!v:lua.require'nighteye.utils.statuscolumn'.statuscolumn()]]
