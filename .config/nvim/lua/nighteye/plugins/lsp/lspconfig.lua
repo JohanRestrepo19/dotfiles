@@ -6,6 +6,7 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "lspsaga",
     },
     config = function()
         -- NOTE: lspconfig related configs
