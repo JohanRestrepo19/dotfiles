@@ -1,5 +1,7 @@
 local conditions = require("heirline.conditions")
 local utils = require("heirline.utils")
+local make_hl = require("nighteye.plugins.heirline-components.utils").make_hl
+
 local MODE_NAMES = {
     -- change the strings if you like it vvvvverbose!
     n = "NORMAL",
@@ -37,19 +39,27 @@ local MODE_NAMES = {
     ["!"] = "!",
     t = "TERMINAL",
 }
---- @param hl_tbl table | nil
---- @return table
-local function make_hl(hl_tbl)
-    local statusline = utils.get_highlight("StatusLine")
-    local base_hl = { bg = statusline.bg, fg = statusline.fg }
-    if not hl_tbl then
-        return base_hl
-    end
-    return vim.tbl_deep_extend("force", base_hl, hl_tbl)
-end
+
+local MODE_COLORS = {
+    n = "normal_bg",
+    i = "insert_bg",
+    v = "visual_bg",
+    V = "visual_bg",
+    ["\22"] = "visual_bg",
+    c = "command_bg",
+    s = "select_bg",
+    S = "select_bg",
+    ["\19"] = "select_bg",
+    R = "replace_bg",
+    r = "replace_bg",
+    ["!"] = "normal_bg",
+    t = "normal_bg",
+}
+
 local ViMode = {
     static = {
         mode_names = MODE_NAMES,
+        mode_colors = MODE_COLORS,
     },
     update = {
         "ModeChanged",
@@ -61,18 +71,21 @@ local ViMode = {
     init = function(self)
         self.mode = vim.fn.mode()
     end,
-    hl = function()
-        return make_hl({ bold = true })
+    hl = function(self)
+        local mode = self.mode:sub(1, 1)
+        return make_hl({ fg = self.mode_colors[mode], bold = true })
     end,
     provider = function(self)
         return self.mode_names[self.mode]
     end,
 }
+
 local FilenameBlock = {
     init = function(self)
         self.filename = vim.api.nvim_buf_get_name(0)
     end,
 }
+
 local FileIcon = {
     init = function(self)
         local filename = self.filename
@@ -87,6 +100,7 @@ local FileIcon = {
         return self.icon and (self.icon .. " ")
     end,
 }
+
 local FilenameModifier = {
     hl = function()
         if vim.bo.modified then
@@ -94,6 +108,7 @@ local FilenameModifier = {
         end
     end,
 }
+
 local Filename = {
     hl = make_hl(),
     provider = function(self)
@@ -107,6 +122,7 @@ local Filename = {
         return filename
     end,
 }
+
 local FileFlags = {
     {
         condition = function()
@@ -123,6 +139,7 @@ local FileFlags = {
         hl = make_hl({ fg = "orange" }),
     },
 }
+
 -- stylua: ignore
 FilenameBlock = utils.insert(
   FilenameBlock,
@@ -131,18 +148,22 @@ FilenameBlock = utils.insert(
   utils.insert(FilenameModifier, Filename),
   { provider = "%<"}
 )
+
+
 local FileType = {
     provider = function()
         return string.upper(vim.bo.filetype)
     end,
-    hl = make_hl({ bold = true }),
 }
+
+
 local FileEncoding = {
     provider = function()
         local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
         return (enc ~= "utf-8" and enc:upper()) or ""
     end,
 }
+
 local Ruler = {
     -- %l = current line number
     -- %L = number of lines in the buffer
@@ -152,6 +173,7 @@ local Ruler = {
     provider = "[%l, %c]",
     hl = make_hl(),
 }
+
 local Diagnostics = {
     static = {
         error_icon = " ",
@@ -163,18 +185,29 @@ local Diagnostics = {
         self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
     end,
     {
-        hl = make_hl(),
+        hl = function(self)
+            if self.errors > 0 then
+                return make_hl({ fg = "error" })
+            end
+            return make_hl()
+        end,
         provider = function(self)
             return (self.error_icon .. self.errors .. " ")
         end,
     },
     {
-        hl = make_hl(),
+        hl = function(self)
+            if self.warnings > 0 then
+                return make_hl({ fg = "warn" })
+            end
+            return make_hl()
+        end,
         provider = function(self)
             return (self.warn_icon .. self.warnings .. " ")
         end,
     },
 }
+
 local Git = {
     condition = conditions.is_git_repo,
     init = function(self)
@@ -186,6 +219,7 @@ local Git = {
     end,
     hl = make_hl(),
 }
+
 local Align = { provider = "%=", hl = make_hl() }
 local Space = { provider = " ", hl = make_hl() }
 -- stylua: ignore
@@ -200,4 +234,5 @@ local StatusLine = {
   Align,
   RightBlock
 }
+
 return StatusLine

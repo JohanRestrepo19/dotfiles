@@ -18,16 +18,44 @@ return {
                         LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
                         MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
 
+                        StatusLine = { bg = theme.ui.bg_p1, fg = theme.ui.special },
+
                         Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
                         PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
                         PmenuSbar = { bg = theme.ui.bg_m1 },
                         PmenuThumb = { bg = theme.ui.bg_p2 },
+
+                        TelescopeTitle = { fg = theme.ui.special, bold = true },
+                        TelescopePromptNormal = { bg = theme.ui.bg_p1 },
+                        TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
+                        TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+                        TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
+                        TelescopePreviewNormal = { bg = theme.ui.bg_dim },
+                        TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
                     }
                 end,
-                theme = "dragon",
-                background = { dark = "dragon" },
+                theme = "wave",
+                background = { dark = "wave" },
             })
             vim.cmd.colorscheme("kanagawa")
+        end,
+    },
+    {
+        "oxfist/night-owl.nvim",
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other start plugins
+        config = function()
+            -- load the colorscheme here
+            require("night-owl").setup({
+                -- These are the default settings
+                bold = false,
+                italics = true,
+                underline = true,
+                undercurl = true,
+                transparent_background = true,
+            })
+            vim.cmd.colorscheme("night-owl")
+
         end,
     },
     {
@@ -63,14 +91,14 @@ return {
                 style = "night",
                 transparent = true,
                 terminal_colors = true,
-                styles = { sidebars = "transparent", floats = "dark" },
+                styles = { sidebars = "transparent", floats = "transparent" },
 
                 on_highlights = function(highlights, colors)
                     highlights.WinSeparator = { fg = colors.cyan }
                 end,
             })
 
-            vim.cmd.colorscheme("tokyonight-night")
+            vim.cmd.colorscheme("tokyonight")
         end,
     },
     {
@@ -97,7 +125,7 @@ return {
     },
     {
         "EdenEast/nightfox.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("nightfox").setup({

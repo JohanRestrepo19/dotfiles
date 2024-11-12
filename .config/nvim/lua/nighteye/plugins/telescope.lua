@@ -53,6 +53,7 @@ return {
                     theme = "ivy",
                     initial_mode = "normal",
                     layout_config = { height = 0.5 },
+                    show_line = false,
                 },
             },
 
