@@ -1,7 +1,3 @@
-local function telescope_buffer_dir()
-    return vim.fn.expand("%:p:h")
-end
-
 return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
@@ -10,10 +6,8 @@ return {
         "nvim-telescope/telescope-file-browser.nvim",
     },
     config = function()
-        local telescope = require("telescope")
         local actions = require("telescope.actions")
         local builtin = require("telescope.builtin")
-        local fb_actions = telescope.extensions.file_browser.actions
 
         require("telescope").setup({
             defaults = {
@@ -56,26 +50,7 @@ return {
                     show_line = false,
                 },
             },
-
-            extensions = {
-                file_browser = {
-                    cwd = telescope_buffer_dir(),
-                    grouped = true,
-                    hidden = true,
-                    hijack_netrw = true,
-                    initial_mode = "normal",
-                    path = "%:p:h",
-                    previewer = false,
-                    respect_gitignore = false,
-                    select_buffer = true,
-                    theme = "dropdown",
-                    layout_config = { height = 40, prompt_position = "top" },
-                    mappings = { ["n"] = { ["h"] = fb_actions.goto_parent_dir } },
-                },
-            },
         })
-
-        telescope.load_extension("file_browser")
 
         local opts = { noremap = true, silent = true }
 
@@ -89,7 +64,6 @@ return {
         end, opts)
         vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
         vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
-        vim.keymap.set("n", "<leader>e", telescope.extensions.file_browser.file_browser, opts)
         vim.keymap.set("n", "<leader>gr", builtin.lsp_references, opts)
     end,
 }

@@ -1,7 +1,7 @@
 return {
     {
         "rebelot/kanagawa.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require("kanagawa").setup({
@@ -34,22 +34,22 @@ return {
                         TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
                     }
                 end,
-                theme = "wave",
-                background = { dark = "wave" },
+                theme = "dragon",
+                background = { dark = "dragon" },
             })
             vim.cmd.colorscheme("kanagawa")
         end,
     },
     {
         "oxfist/night-owl.nvim",
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        lazy = true, -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             -- load the colorscheme here
             require("night-owl").setup({
                 -- These are the default settings
                 bold = false,
-                italics = true,
+                italics = false,
                 underline = true,
                 undercurl = true,
                 transparent_background = true,
