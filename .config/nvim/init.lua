@@ -5,4 +5,7 @@
 -- ██║██║ ╚████║██║   ██║██╗███████╗╚██████╔╝██║  ██║
 -- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
+-- TODO:
+--[ ] Set maximun size to status line git branch name component.
+
 require("nighteye")

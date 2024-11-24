@@ -1,7 +1,7 @@
 return {
     {
         "rebelot/kanagawa.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("kanagawa").setup({
@@ -114,7 +114,7 @@ return {
     {
         "/rose-pine/neovim",
         name = "rose-pine",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require("rose-pine").setup({

@@ -37,8 +37,8 @@ keymap("n", "<tab>", ":tabnext<cr>", opts)
 -- Better Vertical navigation
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
-keymap("n", "}", "<C-d>zz")
-keymap("n", "{", "<C-u>zz")
+keymap('n', '{', ':<C-u>keepjumps normal! {<CR>', opts)
+keymap('n', '}', ':<C-u>keepjumps normal! }<CR>', opts)
 keymap("n", "j", "gj")
 keymap("n", "k", "gk")
 
