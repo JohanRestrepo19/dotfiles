@@ -8,7 +8,7 @@ return {
     opts = {
         -- Your setup opts here
         outline_window = {
-            auto_jump = true,
+            auto_jump = false,
         },
     },
 }

@@ -55,7 +55,6 @@ return {
                 transparent_background = true,
             })
             vim.cmd.colorscheme("night-owl")
-
         end,
     },
     {
@@ -84,7 +83,7 @@ return {
     },
     {
         "folke/tokyonight.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require("tokyonight").setup({
@@ -94,7 +93,35 @@ return {
                 styles = { sidebars = "transparent", floats = "transparent" },
 
                 on_highlights = function(highlights, colors)
+                    local prompt = "#2d3149"
                     highlights.WinSeparator = { fg = colors.cyan }
+                    highlights.TelescopeNormal = {
+                        bg = colors.bg_dark,
+                        fg = colors.fg_dark,
+                    }
+                    highlights.TelescopeBorder = {
+                        bg = colors.bg_dark,
+                        fg = colors.bg_dark,
+                    }
+                    highlights.TelescopePromptNormal = {
+                        bg = prompt,
+                    }
+                    highlights.TelescopePromptBorder = {
+                        bg = prompt,
+                        fg = prompt,
+                    }
+                    highlights.TelescopePromptTitle = {
+                        bg = prompt,
+                        fg = prompt,
+                    }
+                    highlights.TelescopePreviewTitle = {
+                        bg = colors.bg_dark,
+                        fg = colors.bg_dark,
+                    }
+                    highlights.TelescopeResultsTitle = {
+                        bg = colors.bg_dark,
+                        fg = colors.bg_dark,
+                    }
                 end,
             })
 
@@ -114,7 +141,7 @@ return {
     {
         "/rose-pine/neovim",
         name = "rose-pine",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("rose-pine").setup({

@@ -39,6 +39,9 @@ return {
             view_options = {
                 show_hidden = true,
             },
+            float = {
+                max_width = 80
+            },
             delete_to_trash = true,
         })
     end,
