@@ -17,7 +17,7 @@ return {
     {
         "rebelot/heirline.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        lazy = false,
+        enabled = false,
         config = function()
             local heirline = require("heirline")
             local utils = require("heirline.utils")
@@ -52,6 +52,14 @@ return {
                 group = "Heirline",
             })
         end,
+    },
+    {
+        "echasnovski/mini.nvim",
+        version = false,
+        enabled = true,
+        config = function()
+            require('mini.statusline').setup()
+        end
     },
     {
         "lukas-reineke/indent-blankline.nvim",

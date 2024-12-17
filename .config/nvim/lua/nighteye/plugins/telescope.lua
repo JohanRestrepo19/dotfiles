@@ -1,9 +1,9 @@
 return {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
+    tag = "0.1.8",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope-file-browser.nvim",
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     config = function()
         local actions = require("telescope.actions")
@@ -14,7 +14,6 @@ return {
                 path_display = { "truncate" },
                 file_ignore_patterns = { ".git/", "^dist/", ".nuxt/", "^public/" },
                 layout_strategy = "horizontal",
-                -- layout_config = { prompt_position = "top" },
                 mappings = {
                     n = {
                         ["q"] = actions.close,
@@ -51,6 +50,8 @@ return {
                 },
             },
         })
+
+        require("telescope").load_extension("fzf")
 
         local opts = { noremap = true, silent = true }
 

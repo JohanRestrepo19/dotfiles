@@ -42,7 +42,7 @@ vim.cmd([[set iskeyword+=-]])
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.showcmd = true
-vim.opt.laststatus = 3
+-- vim.opt.laststatus = 3
 vim.opt.backspace = "start,eol,indent"
 vim.opt.path:append({ "**" })
 

@@ -41,87 +41,18 @@ return {
         end,
     },
     {
-        "oxfist/night-owl.nvim",
-        lazy = true, -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000, -- make sure to load this before all the other start plugins
-        config = function()
-            -- load the colorscheme here
-            require("night-owl").setup({
-                -- These are the default settings
-                bold = false,
-                italics = false,
-                underline = true,
-                undercurl = true,
-                transparent_background = true,
-            })
-            vim.cmd.colorscheme("night-owl")
-        end,
-    },
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
-        lazy = true,
-        config = function()
-            require("catppuccin").setup({
-                flavour = "mocha",
-                transparent_background = true,
-                integrations = {
-                    native_lsp = {
-                        underlines = {
-                            errors = { "undercurl" },
-                            hints = { "undercurl" },
-                            warnings = { "undercurl" },
-                            information = { "undercurl" },
-                            ok = { "undercurl" },
-                        },
-                    },
-                },
-            })
-            vim.cmd.colorscheme("catppuccin")
-        end,
-    },
-    {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
         config = function()
             require("tokyonight").setup({
-                style = "night",
+                style = "moon",
                 transparent = true,
                 terminal_colors = true,
                 styles = { sidebars = "transparent", floats = "transparent" },
 
                 on_highlights = function(highlights, colors)
-                    local prompt = "#2d3149"
                     highlights.WinSeparator = { fg = colors.cyan }
-                    highlights.TelescopeNormal = {
-                        bg = colors.bg_dark,
-                        fg = colors.fg_dark,
-                    }
-                    highlights.TelescopeBorder = {
-                        bg = colors.bg_dark,
-                        fg = colors.bg_dark,
-                    }
-                    highlights.TelescopePromptNormal = {
-                        bg = prompt,
-                    }
-                    highlights.TelescopePromptBorder = {
-                        bg = prompt,
-                        fg = prompt,
-                    }
-                    highlights.TelescopePromptTitle = {
-                        bg = prompt,
-                        fg = prompt,
-                    }
-                    highlights.TelescopePreviewTitle = {
-                        bg = colors.bg_dark,
-                        fg = colors.bg_dark,
-                    }
-                    highlights.TelescopeResultsTitle = {
-                        bg = colors.bg_dark,
-                        fg = colors.bg_dark,
-                    }
                 end,
             })
 
@@ -136,33 +67,6 @@ return {
             require("solarized-osaka").setup({ transparent = true })
 
             vim.cmd.colorscheme("solarized-osaka")
-        end,
-    },
-    {
-        "/rose-pine/neovim",
-        name = "rose-pine",
-        lazy = true,
-        priority = 1000,
-        config = function()
-            require("rose-pine").setup({
-                styles = { italic = false, transparency = true },
-            })
-            vim.cmd.colorscheme("rose-pine")
-        end,
-    },
-    {
-        "EdenEast/nightfox.nvim",
-        lazy = true,
-        priority = 1000,
-        config = function()
-            require("nightfox").setup({
-                options = {
-                    transparent = true,
-                    styles = { comments = "italic" },
-                },
-            })
-
-            vim.cmd.colorscheme("nightfox")
         end,
     },
 }

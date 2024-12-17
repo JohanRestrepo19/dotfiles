@@ -30,6 +30,10 @@ keymap("n", "sJ", "<C-w>J", opts)
 keymap("n", "sK", "<C-w>K", opts)
 keymap("n", "sL", "<C-w>L", opts)
 
+-- Quick fix list
+keymap("n", "<C-n>", ":cnext<cr>", opts)
+keymap("n", "<C-p>", ":cprev<cr>", opts)
+
 -- Move Tab
 keymap("n", "<S-Tab>", ":tabprev<cr>", opts)
 keymap("n", "<tab>", ":tabnext<cr>", opts)
@@ -37,8 +41,8 @@ keymap("n", "<tab>", ":tabnext<cr>", opts)
 -- Better Vertical navigation
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
-keymap('n', '{', ':<C-u>keepjumps normal! {<CR>', opts)
-keymap('n', '}', ':<C-u>keepjumps normal! }<CR>', opts)
+keymap("n", "{", ":<C-u>keepjumps normal! {<CR>", opts)
+keymap("n", "}", ":<C-u>keepjumps normal! }<CR>", opts)
 keymap("n", "j", "gj")
 keymap("n", "k", "gk")
 
