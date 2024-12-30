@@ -50,9 +50,9 @@ vim.opt.path:append({ "**" })
 
 vim.opt.list = true
 vim.opt.listchars = {
-    tab = "» ",
-    trail = "·",
-    nbsp = "␣",
+  tab = "» ",
+  trail = "·",
+  nbsp = "␣",
 }
 
 -- vim.opt.statuscolumn = [[%!v:lua.require'nighteye.utils.statuscolumn'.statuscolumn()]]
