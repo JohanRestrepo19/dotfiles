@@ -10,8 +10,8 @@
 
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
-plug "zap-zsh/zap-prompt"
-# plug "spaceship-prompt/spaceship-prompt"
+# plug "zap-zsh/zap-prompt"
+plug "spaceship-prompt/spaceship-prompt"
 plug "zap-zsh/exa"
 # plug "romkatv/powerlevel10k"
 
@@ -51,3 +51,4 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 # [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+fpath+=${ZDOTDIR:-~}/.zsh_functions
