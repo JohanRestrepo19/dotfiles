@@ -25,8 +25,8 @@ return {
       },
 
       window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
       },
 
       experimental = {
@@ -58,7 +58,7 @@ return {
       }),
 
       formatting = {
-        fields = { "kind", "abbr", "menu" },
+        -- fields = { "kind", "abbr", "menu" },
         format = lspkind.cmp_format({
           mode = "symbol_text",
           maxwidth = 50,

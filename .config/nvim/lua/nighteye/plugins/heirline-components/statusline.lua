@@ -205,6 +205,7 @@ local Diagnostics = {
   },
 }
 
+-- FIX: This component generates an error when the buffer is in git diff view.
 local Git = {
   condition = conditions.is_git_repo,
   init = function(self)

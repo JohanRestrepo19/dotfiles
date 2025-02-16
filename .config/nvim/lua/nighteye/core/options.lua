@@ -21,9 +21,9 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
 -- Tabs related opts
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 --end
 vim.opt.timeoutlen = 1000
@@ -42,11 +42,10 @@ vim.cmd([[set iskeyword+=-]])
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.showcmd = true
--- vim.opt.laststatus = 3
+vim.opt.laststatus = 3
 vim.opt.backspace = "start,eol,indent"
 vim.opt.path:append({ "**" })
 
--- vim.opt.guicursor = ""
 
 vim.opt.list = true
 vim.opt.listchars = {

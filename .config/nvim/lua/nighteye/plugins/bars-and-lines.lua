@@ -17,7 +17,7 @@ return {
   {
     "rebelot/heirline.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    enabled = false,
+    enabled = true,
     config = function()
       local heirline = require("heirline")
       local utils = require("heirline.utils")
@@ -54,9 +54,9 @@ return {
     end,
   },
   {
-    "echasnovski/mini.nvim",
+    "echasnovski/mini.statusline",
     version = false,
-    enabled = true,
+    enabled = false,
     config = function()
       require("mini.statusline").setup()
     end,

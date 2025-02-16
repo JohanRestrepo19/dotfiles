@@ -37,8 +37,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<C-j>", vim.diagnostic.goto_next, bufopts)
     vim.keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set("n", "gl", vim.diagnostic.open_float, bufopts)
-
-    -- TODO: Add an outline plugin
-    -- vim.keymap.set("n", "fs", '<cmd>Lspsaga outline<cr>')
   end,
 })

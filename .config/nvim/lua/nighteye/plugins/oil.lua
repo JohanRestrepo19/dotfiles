@@ -6,7 +6,8 @@ end
 
 return {
   "stevearc/oil.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+  dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
   keys = {
     { "<leader>e", "<cmd>Oil<cr>", desc = "Oil open parent directory" },
     {
@@ -32,6 +33,14 @@ return {
           opts = { horizontal = true },
           desc = "Open the entry in a horizontal split",
         },
+        ["<C-h>"] = {
+          "actions.parent",
+          desc = "Open parent directory",
+        },
+        ["<C-l>"] = {
+          "actions.select",
+          desc = "Open file or select directory",
+        },
       },
       win_options = {
         winbar = "%{v:lua.CustomOilBar()}",
@@ -40,7 +49,7 @@ return {
         show_hidden = true,
       },
       float = {
-        max_width = 80,
+        max_height = 0.4,
       },
       delete_to_trash = true,
     })

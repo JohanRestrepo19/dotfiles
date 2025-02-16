@@ -13,7 +13,23 @@ return {
       defaults = {
         path_display = { "truncate" },
         file_ignore_patterns = { ".git/", "^dist/", ".nuxt/", "^public/" },
-        layout_strategy = "horizontal",
+        prompt_prefix = " ",
+        selection_caret = " ",
+        layout_strategy = "flex",
+        layout_config = {
+          prompt_position = "top",
+          width = 0.8,
+          height = 0.8,
+          horizontal = {
+            preview_width = 0.5,
+          },
+          vertical = {
+            preview_height = 0.5,
+            preview_cutoff = 30,
+            prompt_position = "bottom",
+          },
+        },
+
         mappings = {
           n = {
             ["q"] = actions.close,
@@ -33,6 +49,7 @@ return {
 
       pickers = {
         buffers = {
+          sort_mru = true,
           mappings = {
             ["n"] = {
               ["<Tab>"] = actions.delete_buffer,
@@ -40,7 +57,7 @@ return {
           },
           initial_mode = "normal",
         },
-        find_files = { hidden = true },
+        find_files = { hidden = true, wrap_results = true },
         grep_string = { initial_mode = "normal" },
         lsp_references = {
           theme = "ivy",
