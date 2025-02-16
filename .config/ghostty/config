@@ -1,0 +1,22 @@
+# font-family = JetBrains Mono Nerd Font
+font-family = Hack Nerd Font
+font-size = 13
+adjust-cell-height = 10%
+
+
+cursor-style = block
+shell-integration-features = no-cursor
+
+
+window-decoration = client
+keybind = f11=toggle_window_decorations
+
+
+theme = terafox
+
+
+# background-opacity = 0.95
+background-blur-radius = 32
+window-width = 90
+window-height = 26
+window-padding-balance = true
