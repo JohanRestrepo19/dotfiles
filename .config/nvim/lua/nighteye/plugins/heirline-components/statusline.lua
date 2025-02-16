@@ -205,7 +205,6 @@ local Diagnostics = {
   },
 }
 
--- FIX: This component generates an error when the buffer is in git diff view.
 local Git = {
   condition = conditions.is_git_repo,
   init = function(self)
@@ -213,7 +212,7 @@ local Git = {
     self.has_changes = self.status_dict.added ~= 0 or self.status_dict.removed ~= 0 or self.status_dict.changed ~= 0
   end,
   provider = function(self)
-    return " " .. self.status_dict.head
+    return " " .. (self.status_dict.head or "")
   end,
   hl = make_hl(),
 }
