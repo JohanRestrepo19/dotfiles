@@ -5,7 +5,6 @@ return {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-nvim-lua",
-    "onsails/lspkind.nvim",
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
@@ -13,7 +12,6 @@ return {
   event = "InsertEnter",
   config = function()
     local cmp = require("cmp")
-    local lspkind = require("lspkind")
 
     require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -58,20 +56,27 @@ return {
       }),
 
       formatting = {
-        -- fields = { "kind", "abbr", "menu" },
-        format = lspkind.cmp_format({
-          mode = "symbol_text",
-          maxwidth = 50,
-          ellipsis_char = "...",
-          show_labelDetails = true,
-          menu = {
-            nvim_lsp = "[LSP]",
-            nvim_lua = "[API]",
-            luasnip = "[SNIP]",
-            buffer = "[BUF]",
-            path = "[PATH]",
-          },
-        }),
+        format = function(_, item)
+          local lazy_icons = require("lazy-icons")
+          local icons = lazy_icons.kinds
+
+          if icons[item.kind] then
+            item.kind = icons[item.kind] .. item.kind
+          end
+
+          local widths = {
+            abbr = vim.g.cmp_widths and vim.g.cmp_widths.abbr or 40,
+            menu = vim.g.cmp_widths and vim.g.cmp_widths.menu or 30,
+          }
+
+          for key, width in pairs(widths) do
+            if item[key] and vim.fn.strdisplaywidth(item[key]) > width then
+              item[key] = vim.fn.strcharpart(item[key], 0, width - 1) .. "…"
+            end
+          end
+
+          return item
+        end,
       },
     })
   end,

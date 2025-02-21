@@ -9,6 +9,9 @@ return {
     "lspsaga",
   },
   config = function()
+
+    local icons = require('lazy-icons');
+
     -- NOTE: lspconfig related configs
     local lspconfig = require("lspconfig")
     require("fidget").setup({
@@ -17,10 +20,7 @@ return {
       },
     })
 
-    -- Diagnostic symbols in the sign column (gutter)
-    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-
-    for type, icon in pairs(signs) do
+    for type, icon in pairs(icons.diagnostics) do
       local hl_name = "DiagnosticSign" .. type
       vim.fn.sign_define(hl_name, {
         text = icon,

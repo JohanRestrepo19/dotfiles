@@ -20,6 +20,7 @@ return {
           prompt_position = "top",
           width = 0.8,
           height = 0.8,
+          flip_columns = 104,
           horizontal = {
             preview_width = 0.5,
           },
@@ -60,10 +61,7 @@ return {
         find_files = { hidden = true, wrap_results = true },
         grep_string = { initial_mode = "normal" },
         lsp_references = {
-          theme = "ivy",
           initial_mode = "normal",
-          layout_config = { height = 0.5 },
-          show_line = false,
         },
       },
     })

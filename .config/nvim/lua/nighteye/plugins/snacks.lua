@@ -11,6 +11,8 @@ return {
       char = "┊",
     },
     statuscolumn = { enabled = true },
+    profiler = { enabled = true },
+    util = { enabled = true },
   },
 
   config = function()

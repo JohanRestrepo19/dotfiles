@@ -12,9 +12,14 @@ return {
       },
       preview_config = { border = "rounded" },
       on_attach = function(_)
-        local gs = require("gitsigns")
-        vim.keymap.set("n", "<leader>dt", gs.diffthis)
-        vim.keymap.set("n", "<leader>bl", gs.blame_line)
+        local gitsigns = require("gitsigns")
+        vim.keymap.set("n", "<leader>dt", gitsigns.diffthis)
+        vim.keymap.set("n", "<leader>bl", gitsigns.blame_line)
+
+        vim.keymap.set("n", "<leader>gs", gitsigns.setqflist)
+        vim.keymap.set("n", "<leader>gS", function()
+          gitsigns.setqflist("all")
+        end)
       end,
     })
   end,
