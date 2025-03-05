@@ -42,6 +42,7 @@ alias wnotes='nvim ~/Desktop/work/notes.md'
 alias dev='cd ~/Desktop/dev/'
 alias work='cd ~/Desktop/work/'
 alias vim='nvim'
+alias lg='lazygit'
 
 # This loads nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
