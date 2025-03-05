@@ -6,8 +6,8 @@ end
 
 return {
   "stevearc/oil.nvim",
-  dependencies = { { "echasnovski/mini.icons", opts = {} } },
-  -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+  -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
   keys = {
     { "<leader>e", "<cmd>Oil<cr>", desc = "Oil open parent directory" },
     {
@@ -49,6 +49,7 @@ return {
         show_hidden = true,
       },
       float = {
+        max_width = 0.6,
         max_height = 0.4,
       },
       delete_to_trash = true,
