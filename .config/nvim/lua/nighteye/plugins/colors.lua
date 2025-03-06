@@ -20,7 +20,7 @@ return {
   },
   {
     "craftzdog/solarized-osaka.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("solarized-osaka").setup({
@@ -69,7 +69,7 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
       require("nightfox").setup({
@@ -84,7 +84,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("nightfox")
+      vim.cmd.colorscheme("terafox")
     end,
   },
 }
