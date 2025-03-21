@@ -1,2 +1,6 @@
 gui:
   showFileTree: false
+
+git:
+  log:
+    showWholeGraph: true
