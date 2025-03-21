@@ -10,8 +10,8 @@
 
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
-# plug "zap-zsh/zap-prompt"
-plug "spaceship-prompt/spaceship-prompt"
+plug "zap-zsh/zap-prompt"
+# plug "spaceship-prompt/spaceship-prompt"
 plug "zap-zsh/exa"
 # plug "romkatv/powerlevel10k"
 
