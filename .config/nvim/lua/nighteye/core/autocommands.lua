@@ -26,8 +26,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end, bufopts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, bufopts)
-    -- vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-    -- vim.keymap.set("n", "K", '<cmd>Lspsaga hover_doc<cr>')
     vim.keymap.set("n", "K", function()
       local is_saga, _ = pcall(require, "lspsaga")
       if vim.bo.filetype == "help" or not is_saga then

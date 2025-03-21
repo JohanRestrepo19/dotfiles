@@ -36,6 +36,7 @@ return {
             ["q"] = actions.close,
             ["sv"] = actions.select_vertical,
             ["ss"] = actions.select_horizontal,
+            ["st"] = actions.select_tab,
           },
           i = {
             ["<C-j>"] = actions.move_selection_next,
@@ -56,7 +57,6 @@ return {
               ["<Tab>"] = actions.delete_buffer,
             },
           },
-          initial_mode = "normal",
         },
         find_files = { hidden = true, wrap_results = true },
         grep_string = { initial_mode = "normal" },

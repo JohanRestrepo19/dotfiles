@@ -1,11 +1,11 @@
 return {
   {
     "folke/tokyonight.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
       require("tokyonight").setup({
-        style = "night",
+        style = "moon",
         transparent = true,
         terminal_colors = true,
         styles = { sidebars = "transparent", floats = "transparent" },
@@ -69,7 +69,7 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("nightfox").setup({
@@ -84,7 +84,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("terafox")
+      vim.cmd.colorscheme("carbonfox")
     end,
   },
   {
@@ -131,9 +131,9 @@ return {
             DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
           }
         end,
-        theme = "wave", -- Load "wave" theme when 'background' option is not set
+        theme = "dragon", -- Load "wave" theme when 'background' option is not set
         background = { -- map the value of 'background' option to a theme
-          dark = "wave", -- try "dragon" !
+          dark = "dragon", -- try "dragon" !
           light = "lotus",
         },
       })
