@@ -9,9 +9,9 @@ return {
   -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
   dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
   keys = {
-    { "<leader>e", "<cmd>Oil<cr>", desc = "Oil open parent directory" },
+    { "<leader>E", "<cmd>Oil<cr>", desc = "Oil open parent directory" },
     {
-      "<leader>E",
+      "<leader>e",
       function()
         local oil = require("oil")
         oil.toggle_float()

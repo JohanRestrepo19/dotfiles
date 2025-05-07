@@ -9,8 +9,7 @@ return {
     "lspsaga",
   },
   config = function()
-
-    local icons = require('lazy-icons');
+    local icons = require("lazy-icons")
 
     -- NOTE: lspconfig related configs
     local lspconfig = require("lspconfig")
@@ -20,13 +19,12 @@ return {
       },
     })
 
+    local signs = { text = {}, numhl = {} }
+
     for type, icon in pairs(icons.diagnostics) do
-      local hl_name = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl_name, {
-        text = icon,
-        texthl = hl_name,
-        numhl = hl_name,
-      })
+      local severity = vim.diagnostic.severity[string.upper(type)]
+      signs["text"][severity] = icon
+      signs["numhl"][severity] = ""
     end
 
     -- Diagnostic config.
@@ -40,9 +38,29 @@ return {
         source = "always",
         style = "minimal",
       },
+      signs = signs,
     })
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+    -- NOTE: Add capabilities to all clients
+    vim.lsp.config("*", { capabilities = capabilities })
+
+    vim.lsp.config("lua_ls", {
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          diagnostics = {
+            -- Get the language server to recognize the 'vim' global
+            globals = { "vim" },
+          },
+        },
+        workspace = {
+          -- Make the server aware of Neovim runtime files
+          library = vim.api.nvim_get_runtime_file("", true),
+        },
+      },
+    })
 
     -- NOTE: Mason related configs
     require("mason").setup({
@@ -60,30 +78,6 @@ return {
         "eslint",
       },
       automatic_installation = false,
-      handlers = {
-        function(server_name) -- default handler (optional)
-          lspconfig[server_name].setup({
-            capabilities = capabilities,
-          })
-        end,
-        ["lua_ls"] = function()
-          lspconfig.lua_ls.setup({
-            capabilities = capabilities,
-            settings = {
-              Lua = {
-                diagnostics = {
-                  -- Get the language server to recognize the 'vim' global
-                  globals = { "vim" },
-                },
-              },
-              workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-              },
-            },
-          })
-        end,
-      },
     })
 
     require("mason-tool-installer").setup({

@@ -45,7 +45,12 @@ return {
         ["<CR>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
           select = true,
-        }),
+        }, { "i", "c" }),
+
+        ["<C-l>"] = cmp.mapping.confirm({
+          behavior = cmp.ConfirmBehavior.Replace,
+          select = true,
+        }, { "i", "c" }),
 
         ["<Tab>"] = cmp.mapping(function(fallback)
           if luasnip.locally_jumpable(1) then

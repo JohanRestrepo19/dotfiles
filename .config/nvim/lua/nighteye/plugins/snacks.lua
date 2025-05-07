@@ -11,7 +11,7 @@ return {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
       indent = {
-        enabled = true,
+        enabled = false,
         scope = { char = "┊" },
       },
       statuscolumn = { enabled = true },

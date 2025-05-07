@@ -39,11 +39,16 @@ local function lualine_options()
       theme = "auto",
       globalstatus = vim.o.laststatus == 3,
       disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
+        always_show_tabline = false,
+    },
+    tabline = {
+      lualine_a = {
+        { "tabs", mode = 1, max_length = 70 },
+      },
     },
     sections = {
       lualine_a = { "mode" },
       lualine_b = { { "branch", fmt = trunc(104, 5, 50, false) } },
-
       lualine_c = {
         {
           "diagnostics",
@@ -54,7 +59,7 @@ local function lualine_options()
             hint = icons.diagnostics.Hint,
           },
         },
-        { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+        { "filetype", icon_only = false, separator = "", padding = { left = 1, right = 0 } },
         {
           "filename",
           path = path_option(),

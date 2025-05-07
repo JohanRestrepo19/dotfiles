@@ -1,17 +1,49 @@
 return {
   {
+    "vague2k/vague.nvim",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      -- NOTE: you do not need to call setup if you don't want to.
+      require("vague").setup({
+        transparent = true,
+      })
+      vim.cmd.colorscheme("vague")
+    end,
+  },
+  {
+    "AlexvZyl/nordic.nvim",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      local nordic = require("nordic")
+
+      nordic.setup({
+        transparent = {
+          -- Enable transparent background.
+          bg = true,
+          -- Enable transparent background for floating windows.
+          float = false,
+        },
+      })
+
+      nordic.load()
+    end,
+  },
+  {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     config = function()
       require("tokyonight").setup({
-        style = "moon",
+        style = "night",
         transparent = true,
         terminal_colors = true,
         styles = { sidebars = "transparent", floats = "transparent" },
 
         on_highlights = function(highlights, colors)
           highlights.WinSeparator = { fg = colors.cyan }
+          -- highlights.CursorLine = { fg = colors.none }
         end,
       })
 
@@ -39,6 +71,20 @@ return {
     end,
   },
   {
+    "sainnhe/gruvbox-material",
+    lazy = true,
+    config = function()
+      vim.cmd([[
+        let g:gruvbox_material_background = 'hard'
+        let g:gruvbox_material_better_performance = 1
+        let g:gruvbox_material_transparent_background = 2
+
+        let g:gruvbox_material_diagnostic_virtual_text = 'colored'
+      ]])
+      vim.cmd.colorscheme("gruvbox-material")
+    end,
+  },
+  {
     "ellisonleao/gruvbox.nvim",
     lazy = true,
     priority = 1000,
@@ -46,6 +92,13 @@ return {
       require("gruvbox").setup({
         transparent_mode = true,
         contrast = "hard",
+        italic = {
+          strings = false,
+          emphasis = false,
+          comments = false,
+          operators = false,
+          folds = false,
+        },
       })
       vim.o.background = "dark"
       vim.cmd.colorscheme("gruvbox")
@@ -57,9 +110,10 @@ return {
     lazy = true,
     config = function()
       require("rose-pine").setup({
+        variant = "main",
         styles = {
-          bold = true,
-          italic = true,
+          bold = false,
+          italic = false,
           transparency = true,
         },
       })
@@ -95,10 +149,10 @@ return {
       require("kanagawa").setup({
         compile = true, -- enable compiling the colorscheme
         undercurl = true, -- enable undercurls
-        commentStyle = { italic = true },
+        commentStyle = { italic = false },
         functionStyle = {},
-        keywordStyle = { italic = true },
-        statementStyle = { bold = true },
+        keywordStyle = { italic = false },
+        statementStyle = { bold = false },
         typeStyle = {},
         transparent = true, -- do not set background color
         dimInactive = false, -- dim inactive window `:h hl-NormalNC`
@@ -117,13 +171,15 @@ return {
           end
 
           return {
-            TelescopeTitle = { fg = theme.ui.special, bold = true },
-            TelescopePromptNormal = { bg = theme.ui.bg_p1 },
-            TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
-            TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
-            TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
-            TelescopePreviewNormal = { bg = theme.ui.bg_dim },
-            TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
+            CursorLine = { bg = "none" },
+
+            -- TelescopeTitle = { fg = theme.ui.special, bold = true },
+            -- TelescopePromptNormal = { bg = theme.ui.bg_p1 },
+            -- TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
+            -- TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+            -- TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
+            -- TelescopePreviewNormal = { bg = theme.ui.bg_dim },
+            -- TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
 
             DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
             DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
