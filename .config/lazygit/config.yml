@@ -1,6 +1,9 @@
 gui:
-  showFileTree: false
+  showFileTree: true
 
 git:
   log:
     showWholeGraph: true
+
+os:
+  editPreset: 'nvim'
