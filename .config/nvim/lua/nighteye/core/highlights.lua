@@ -1,4 +1,4 @@
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 -- vim.opt.colorcolumn = "80"
 vim.opt.guicursor = ""
 vim.opt.termguicolors = true

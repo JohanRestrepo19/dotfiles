@@ -1,5 +1,17 @@
 return {
   {
+    "sainnhe/everforest",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.everforest_enable_italic = true
+      vim.g.everforest_background = "hard"
+      vim.g.everforest_transparent_background = 2
+      vim.g.everforest_float_style = 'dim'
+      vim.cmd.colorscheme("everforest")
+    end
+  },
+  {
     "vague2k/vague.nvim",
     lazy = true,
     priority = 1000,
@@ -106,7 +118,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = false,
+    lazy = true,
     config = function()
       require("rose-pine").setup({
         variant = "main",

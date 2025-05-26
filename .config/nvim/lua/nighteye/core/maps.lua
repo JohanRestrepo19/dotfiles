@@ -88,5 +88,5 @@ keymap("i", "<C-H>", "<C-w>", opts)
 keymap("n", "<Esc>", ":nohlsearch<cr>")
 
 
-keymap('n', '<M-i>', '<C-i>', opts)
-keymap('n', '<M-o>', '<C-o>', opts)
+-- Jumplist
+keymap('n', '<c-m>', '<c-i>', opts)

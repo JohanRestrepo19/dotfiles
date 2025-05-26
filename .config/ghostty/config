@@ -10,7 +10,7 @@ keybind = f11=toggle_window_decorations
 # theme = "Solarized Dark - Patched"
 # background = "#031219"
 
-theme = "rose-pine"
+theme = "Everforest Dark - Hard"
 
 background-opacity = 0.95
 background-blur-radius = 20
