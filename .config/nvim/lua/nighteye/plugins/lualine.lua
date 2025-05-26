@@ -25,7 +25,6 @@ local function path_option()
 end
 
 local function lualine_options()
-  -- PERF: we don't need this lualine require madness 🤷
   local lualine_require = require("lualine_require")
   lualine_require.require = require
 

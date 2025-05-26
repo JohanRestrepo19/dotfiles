@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 -- vim.g.maplocalleader = " "
 
-keymap("n", "<leader>w", ":w<cr>", opts)
+-- keymap("n", "<leader>w", ":w<cr>", opts)
 
 -- Increment/decrement
 keymap("n", "+", "<C-a>", opts)
@@ -86,3 +86,7 @@ keymap("i", "<C-H>", "<C-w>", opts)
 
 -- Clear hl on pressing <Esc> in normal mode
 keymap("n", "<Esc>", ":nohlsearch<cr>")
+
+
+keymap('n', '<M-i>', '<C-i>', opts)
+keymap('n', '<M-o>', '<C-o>', opts)

@@ -4,7 +4,6 @@ return {
     lazy = true,
     priority = 1000,
     config = function()
-      -- NOTE: you do not need to call setup if you don't want to.
       require("vague").setup({
         transparent = true,
       })
@@ -32,14 +31,14 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("tokyonight").setup({
-        style = "night",
+        style = "moon",
         transparent = true,
         terminal_colors = true,
-        styles = { sidebars = "transparent", floats = "transparent" },
+        styles = { sidebars = "transparent", floats = "dark" },
 
         on_highlights = function(highlights, colors)
           highlights.WinSeparator = { fg = colors.cyan }
@@ -59,7 +58,7 @@ return {
         transparent = true,
         styles = {
           sidebars = "dark",
-          floats = "transparent",
+          floats = "dark",
         },
         on_highlights = function(hl, c)
           -- hl.LineNr = { fg = c.base01 }
@@ -107,7 +106,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = true,
+    lazy = false,
     config = function()
       require("rose-pine").setup({
         variant = "main",
@@ -171,15 +170,23 @@ return {
           end
 
           return {
-            CursorLine = { bg = "none" },
 
-            -- TelescopeTitle = { fg = theme.ui.special, bold = true },
-            -- TelescopePromptNormal = { bg = theme.ui.bg_p1 },
-            -- TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
-            -- TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
-            -- TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
-            -- TelescopePreviewNormal = { bg = theme.ui.bg_dim },
-            -- TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
+            NormalFloat = { bg = "none" },
+            FloatBorder = { bg = "none" },
+            FloatTitle = { bg = "none" },
+            TelescopeBorder = { fg = "none" },
+
+            -- Save an hlgroup with dark background and dimmed foreground
+            -- so that you can use it where your still want darker windows.
+            -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
+            NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+
+            -- Popular plugins that open floats will link to NormalFloat by default;
+            -- set their background accordingly if you wish to keep them dark and borderless
+            LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+            MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+
+            -- CursorLine = { bg = "none" },
 
             DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
             DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
@@ -187,9 +194,9 @@ return {
             DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
           }
         end,
-        theme = "dragon", -- Load "wave" theme when 'background' option is not set
+        theme = "wave", -- Load "wave" theme when 'background' option is not set
         background = { -- map the value of 'background' option to a theme
-          dark = "dragon", -- try "dragon" !
+          dark = "wave", -- try "dragon" !
           light = "lotus",
         },
       })

@@ -52,5 +52,3 @@ vim.opt.listchars = {
   trail = "·",
   nbsp = "␣",
 }
-
--- vim.opt.statuscolumn = [[%!v:lua.require'nighteye.utils.statuscolumn'.statuscolumn()]]

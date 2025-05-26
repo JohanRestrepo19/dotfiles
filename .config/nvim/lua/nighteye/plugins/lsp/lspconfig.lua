@@ -1,23 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
-  dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    { "j-hui/fidget.nvim", tag = "v1.1.0" },
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    "lspsaga",
-  },
+  dependencies = { "hrsh7th/cmp-nvim-lsp" },
   config = function()
     local icons = require("lazy-icons")
-
-    -- NOTE: lspconfig related configs
-    local lspconfig = require("lspconfig")
-    require("fidget").setup({
-      notification = {
-        window = { winblend = 0 },
-      },
-    })
 
     local signs = { text = {}, numhl = {} }
 
@@ -59,32 +44,6 @@ return {
           -- Make the server aware of Neovim runtime files
           library = vim.api.nvim_get_runtime_file("", true),
         },
-      },
-    })
-
-    -- NOTE: Mason related configs
-    require("mason").setup({
-      ui = { border = "rounded" },
-    })
-
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "cssls",
-        "dockerls",
-        "html",
-        "lua_ls",
-        "pyright",
-        "ts_ls",
-        "eslint",
-      },
-      automatic_installation = false,
-    })
-
-    require("mason-tool-installer").setup({
-      ensure_installed = {
-        "prettier",
-        "stylua",
-        "ruff",
       },
     })
   end,

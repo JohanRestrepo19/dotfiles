@@ -11,6 +11,7 @@ return {
 
     require("telescope").setup({
       defaults = {
+        sorting_strategy = "ascending",
         path_display = { "truncate" },
         file_ignore_patterns = { ".git/", "^dist/", ".nuxt/", "^public/" },
         prompt_prefix = " ",
