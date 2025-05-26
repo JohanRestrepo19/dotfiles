@@ -5,13 +5,16 @@
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
+source ~/.config/zsh/.zsh_functions/custom.sh
+source ~/.config/zsh/.zsh_functions/source-fzf.sh
+
 # Created by Zap installer
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
-plug "zap-zsh/zap-prompt"
-# plug "spaceship-prompt/spaceship-prompt"
+# plug "zap-zsh/zap-prompt"
+plug "spaceship-prompt/spaceship-prompt"
 plug "zap-zsh/exa"
 # plug "romkatv/powerlevel10k"
 
@@ -23,13 +26,6 @@ compinit
 
 # Key bindings
 # bindkey '^ ' autosuggest-accept
-
-# Disable fzf default key bindings.
-export FZF_CTRL_T_COMMAND=""
-
-export FZF_ALT_C_OPTS="
-  --walker-skip .git,node_modules,target"
-
 
 alias ll='eza -lag --icons --no-time'
 alias lt='eza --tree --level=3 --icons'
@@ -54,4 +50,9 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
-source ~/.config/zsh/.zsh_functions/custom.sh
+export FZF_CTRL_T_OPTS="--height 60% \
+--border sharp \
+--layout reverse \
+--prompt '∷ ' \
+--pointer ▶ \
+--marker ⇒"
