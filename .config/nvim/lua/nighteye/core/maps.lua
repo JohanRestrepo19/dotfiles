@@ -74,11 +74,11 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
 -- Alternate word wrapping
 keymap("n", "<leader>tw", function()
-  if vim.api.nvim_get_option_value("wrap", {}) then
-    vim.cmd("set nowrap")
-  else
-    vim.cmd("set wrap")
-  end
+    if vim.api.nvim_get_option_value("wrap", {}) then
+        vim.cmd("set nowrap")
+    else
+        vim.cmd("set wrap")
+    end
 end, opts)
 
 -- Delete complete word in insert mode
@@ -87,6 +87,5 @@ keymap("i", "<C-H>", "<C-w>", opts)
 -- Clear hl on pressing <Esc> in normal mode
 keymap("n", "<Esc>", ":nohlsearch<cr>")
 
-
 -- Jumplist
-keymap('n', '<c-m>', '<c-i>', opts)
+keymap("n", "<c-m>", "<c-i>", opts)
