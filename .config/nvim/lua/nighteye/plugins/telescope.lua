@@ -38,6 +38,10 @@ return {
                         ["sv"] = actions.select_vertical,
                         ["ss"] = actions.select_horizontal,
                         ["st"] = actions.select_tab,
+                        ["<C-k>"] = actions.preview_scrolling_up,
+                        ["<C-l>"] = actions.preview_scrolling_right,
+                        ["<C-j>"] = actions.preview_scrolling_down,
+                        ["<C-h>"] = actions.preview_scrolling_left,
                     },
                     i = {
                         ["<C-j>"] = actions.move_selection_next,

@@ -233,6 +233,8 @@ return {
                         RainbowDelimiterGreen = { fg = palette.dragonGreen },
                         RainbowDelimiterViolet = { fg = palette.dragonViolet },
                         RainbowDelimiterCyan = { fg = palette.dragonCyan },
+
+                        WinSeparator = { fg = theme.ui.fg_reverse },
                     }
                 end,
                 theme = "dragon", -- Load "wave" theme when 'background' option is not set

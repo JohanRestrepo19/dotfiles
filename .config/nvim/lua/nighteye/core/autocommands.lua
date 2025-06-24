@@ -14,6 +14,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- Workaroud qf list not selectable items
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    -- Restablece el comportamiento normal de <CR>
+    vim.keymap.set("n", "<CR>", "<CR>", { buffer = true, remap = true })
+  end,
+})
+
 -- Lsp keymaps
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("NighteyeLspConfig", {}),
