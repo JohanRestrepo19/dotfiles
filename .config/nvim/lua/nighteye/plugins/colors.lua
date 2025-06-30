@@ -43,14 +43,14 @@ return {
     },
     {
         "folke/tokyonight.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require("tokyonight").setup({
-                style = "moon",
+                style = "night",
                 transparent = true,
                 terminal_colors = true,
-                styles = { sidebars = "transparent", floats = "dark" },
+                styles = { sidebars = "transparent", floats = "transparent" },
 
                 on_highlights = function(highlights, colors)
                     highlights.WinSeparator = { fg = colors.cyan }
@@ -168,7 +168,7 @@ return {
     },
     {
         "rebelot/kanagawa.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("kanagawa").setup({
