@@ -48,7 +48,7 @@ vim.opt.path:append({ "**" })
 
 vim.opt.list = true
 vim.opt.listchars = {
-    tab = "» ",
-    trail = "·",
-    nbsp = "␣",
+  tab = "» ",
+  trail = "·",
+  nbsp = "␣",
 }
