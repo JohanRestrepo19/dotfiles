@@ -21,9 +21,9 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
 -- Tabs related opts
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 --end
 vim.opt.timeoutlen = 1000
