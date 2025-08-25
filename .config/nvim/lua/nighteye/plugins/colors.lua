@@ -69,8 +69,8 @@ return {
       require("solarized-osaka").setup({
         transparent = true,
         styles = {
-          sidebars = "dark",
-          floats = "dark",
+          sidebars = "transparent",
+          floats = "transparent",
         },
         on_highlights = function(hl, c)
           -- hl.LineNr = { fg = c.base01 }
@@ -163,7 +163,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("carbonfox")
+      vim.cmd.colorscheme("nightfox")
     end,
   },
   {
@@ -207,7 +207,7 @@ return {
             FloatBorder = { bg = "none" },
             FloatTitle = { bg = "none" },
             -- TelescopeBorder = { fg = "none" },
-            TelescopeBorder = { fg = palette.dragonBlue2 },
+            TelescopeBorder = { fg = palette.dragonBlue2, bg = "none" },
 
             -- Save an hlgroup with dark background and dimmed foreground
             -- so that you can use it where your still want darker windows.
@@ -237,15 +237,32 @@ return {
             WinSeparator = { fg = theme.ui.fg_reverse },
           }
         end,
-        theme = "dragon", -- Load "wave" theme when 'background' option is not set
+        theme = "wave", -- Load "wave" theme when 'background' option is not set
         background = { -- map the value of 'background' option to a theme
-          dark = "dragon", -- try "dragon" !
+          dark = "wave", -- try "dragon" !
           light = "lotus",
         },
       })
 
       -- setup must be called before loading
       vim.cmd("colorscheme kanagawa")
+    end,
+  },
+  {
+    "slugbyte/lackluster.nvim",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require("lackluster").setup({
+        tweak_background = {
+          normal = "none",
+          popup = "none",
+        },
+        tweak_ui = {
+          enabled_end_of_buffer = true,
+        },
+      })
+      vim.cmd.colorscheme("lackluster-hack")
     end,
   },
 }

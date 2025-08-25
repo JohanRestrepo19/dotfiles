@@ -42,7 +42,7 @@ local function lualine_options()
     },
     tabline = {
       lualine_a = {
-        { "tabs", mode = 1, max_length = 70 },
+        { "tabs", mode = 1, max_length = 140 },
       },
     },
     sections = {

@@ -20,7 +20,7 @@ return {
         border = "rounded",
         header = "Diagnostics",
         prefix = "󱞩 ",
-        source = "if_many",
+        source = true,
         style = "minimal",
       },
       signs = signs,
@@ -47,47 +47,38 @@ return {
       },
     })
 
+    -- NOTE: Vue related config.
+
     local vue_language_server_path = vim.fn.stdpath("data")
       .. "/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin"
-
-    local tsdk_path = vim.fn.stdpath("data") .. "/mason/packages/typescript-language-server/node_modules/typescript/lib"
 
     local vue_plugin = {
       name = "@vue/typescript-plugin",
       location = vue_language_server_path,
-      languages = { "vue", "javascript", "typescript" },
+      languages = { "vue" },
+      configNamespace = "typescript",
     }
 
-    vim.lsp.config("ts_ls", {
-      capabilities = capabilities,
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "javascript.jsx",
-        "typescript",
-        "typescriptreact",
-        "typescript.tsx",
-      },
-      init_options = {
-        plugins = {
-          vue_plugin,
+    -- TODO: Replace with ts_ls
+    local vtsls_config = {
+      settings = {
+        vtsls = {
+          tsserver = {
+            globalPlugins = {
+              vue_plugin,
+            },
+          },
         },
       },
-    })
-
-    vim.lsp.config("vue_ls", {
-      -- add filetypes for typescript, javascript and vue
-      -- capabilities = capabilities,
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-      init_options = {
-        typescript = {
-          tsdk = tsdk_path,
-        },
-        vue = {
-          -- disable hybrid mode
-          hybridMode = false,
-        },
-      },
-    })
+    }
+
+    -- If you are on most recent `nvim-lspconfig`
+    local vue_ls_config = {}
+    vim.lsp.config("vtsls", vtsls_config)
+    vim.lsp.config("vue_ls", vue_ls_config)
+    vim.lsp.enable({ "vtsls", "vue_ls" })
+
+    -- vim.lsp.enable({ "vtsls", "vue_ls", "ts_ls" })
   end,
 }

@@ -33,6 +33,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.lsp.buf.definition()
       vim.cmd("normal! zz")
     end, bufopts)
+
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set("n", "K", function()

@@ -68,7 +68,7 @@ return {
         grep_string = { initial_mode = "normal" },
         lsp_references = {
           initial_mode = "normal",
-          show_line = false,
+          show_line = true,
         },
       },
     })

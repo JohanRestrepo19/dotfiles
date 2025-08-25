@@ -25,6 +25,12 @@ return {
         typescriptreact = { "prettier" },
         markdown = { "prettier" },
       },
+      formatters = {
+        prettier = {
+          -- Aquí pasas las opciones por defecto
+          prepend_args = { "--single-quote", "--no-semi" },
+        },
+      },
     })
 
     vim.api.nvim_create_user_command("Format", function(args)
