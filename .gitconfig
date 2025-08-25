@@ -12,8 +12,10 @@
     name = Johan Restrepo
 [github]
     user = JohanRestrepo19
-[includeIf "gitdir:~/Desktop/work/"]
-    path = ~/Desktop/work/.gitconfig-work
+[includeIf "gitdir:~/Desktop/work/itwox/"]
+    path = ~/Desktop/work/itwox/.gitconfig-itwox
+[includeIf "gitdir:~/Desktop/work/linktic/"]
+    path = ~/Desktop/work/linktic/.gitconfig-linktic
 [credential]
     helper = store
 [init]
