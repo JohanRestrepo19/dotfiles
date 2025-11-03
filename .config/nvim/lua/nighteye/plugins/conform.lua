@@ -23,12 +23,34 @@ return {
         javascriptreact = { "prettier" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
+        vue = { "prettier" },
         markdown = { "prettier" },
       },
       formatters = {
         prettier = {
-          -- Aquí pasas las opciones por defecto
-          prepend_args = { "--single-quote", "--no-semi" },
+
+          args = function(ctx)
+            local args = { "--stdin-filepath", "$FILENAME" }
+
+            local found_project_config = vim.fs.find({
+              ".prettierrc",
+              ".prettierrc.json",
+              ".prettierrc.js",
+              "prettier.config.js",
+              "prettier.config.cjs",
+            }, { upward = true, path = ctx.dirname })[1]
+
+            if not found_project_config then
+              vim.list_extend(args, {
+                "--single-quote",
+                "--no-semi",
+                "--trailing-comma",
+                "es5",
+              })
+            end
+
+            return args
+          end,
         },
       },
     })

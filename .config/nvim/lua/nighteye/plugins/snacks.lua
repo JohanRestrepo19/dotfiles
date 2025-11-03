@@ -14,7 +14,7 @@ return {
         enabled = false,
         scope = { char = "┊" },
       },
-      statuscolumn = { enabled = false },
+      statuscolumn = { enabled = true },
       profiler = { enabled = true },
       util = { enabled = true },
     })

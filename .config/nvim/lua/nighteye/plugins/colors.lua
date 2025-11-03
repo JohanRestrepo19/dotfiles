@@ -43,7 +43,7 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("tokyonight").setup({
@@ -148,7 +148,7 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
       require("nightfox").setup({
@@ -163,7 +163,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("nightfox")
+      vim.cmd.colorscheme("terafox")
     end,
   },
   {
@@ -237,9 +237,9 @@ return {
             WinSeparator = { fg = theme.ui.fg_reverse },
           }
         end,
-        theme = "wave", -- Load "wave" theme when 'background' option is not set
+        theme = "dragon", -- Load "wave" theme when 'background' option is not set
         background = { -- map the value of 'background' option to a theme
-          dark = "wave", -- try "dragon" !
+          dark = "dragon", -- try "dragon" !
           light = "lotus",
         },
       })
@@ -263,6 +263,18 @@ return {
         },
       })
       vim.cmd.colorscheme("lackluster-hack")
+    end,
+  },
+  {
+    "oxfist/night-owl.nvim",
+    lazy = true, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      require("night-owl").setup({
+        transparent_background = true,
+      })
+      vim.cmd.colorscheme("night-owl")
     end,
   },
 }

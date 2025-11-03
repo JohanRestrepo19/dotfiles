@@ -56,7 +56,7 @@ return {
 
       pickers = {
         buffers = {
-          initial_mode = "normal",
+          initial_mode = "insert",
           sort_mru = true,
           mappings = {
             ["n"] = {
@@ -64,7 +64,12 @@ return {
             },
           },
         },
-        find_files = { hidden = true, wrap_results = true },
+        find_files = {
+          hidden = true,
+          wrap_results = true,
+          previewer = false,
+          layout_config = { height = 40 },
+        },
         grep_string = { initial_mode = "normal" },
         lsp_references = {
           initial_mode = "normal",
