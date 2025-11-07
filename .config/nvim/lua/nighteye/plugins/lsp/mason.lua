@@ -20,8 +20,7 @@ return {
         "lua_ls",
         "marksman",
         "pyright",
-        -- "ts_ls",
-        "vtsls", -- TODO: Replace with ts_ls
+        "ts_ls",
         "vue_ls",
       },
       automatic_installation = false,
