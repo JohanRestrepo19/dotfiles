@@ -1,19 +1,20 @@
 font-family = "JetBrains Mono Nerd Font"
 font-size = 11.5
 
+# font-family = "Ubuntu Mono Nerd Font"
+# font-size = 14
+
 cursor-style = block
 shell-integration-features = no-cursor
 
 window-decoration = client
 keybind = f11=toggle_window_decorations
 
-# theme = "Solarized Dark - Patched"
-# background = "#031219"
+# theme = "solarized-osaka-dark"
+theme = "Gruvbox Dark Hard"
 
-theme = "Everforest Dark - Hard"
-
-background-opacity = 0.95
+background-opacity = 0.98
 background-blur-radius = 20
-window-width = 90
-window-height = 26
+# window-width = 90
+# window-height = 26
 window-padding-balance = true
