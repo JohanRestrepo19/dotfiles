@@ -1,13 +1,15 @@
 [general]
-import = ["./themes/kanagawa-dragon.toml"]
+import = ["./themes/gruvbox-dark.toml"]
 
 [font]
+# normal = { family = "Fira Code Nerd Font" }
 normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
-# normal = { family = "BlexMonoNerdFont", style = "Regular" }
-size = 11.5
+# size = 11
+# normal = { family = "Ubuntu Mono Nerd Font Mono", style = "Regular" }
+# size = 14
 
 [window]
-opacity = 0.90
+opacity = 0.98
 dynamic_padding = true
 
 [window.dimensions]
