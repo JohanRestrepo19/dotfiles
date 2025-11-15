@@ -102,18 +102,15 @@ return {
   },
   {
     "ellisonleao/gruvbox.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
       require("gruvbox").setup({
         transparent_mode = true,
-        contrast = "hard",
+        contrast = "",
         italic = {
           strings = false,
-          emphasis = false,
           comments = false,
-          operators = false,
-          folds = false,
         },
       })
       vim.o.background = "dark"
@@ -148,7 +145,7 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("nightfox").setup({
