@@ -1,7 +1,6 @@
 return {
 
   "neovim/nvim-lspconfig",
-  dependencies = { "hrsh7th/cmp-nvim-lsp" },
   config = function()
     local icons = require("lazy-icons")
 
@@ -27,13 +26,9 @@ return {
       signs = signs,
     })
 
-    local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
     -- NOTE: Add capabilities to all clients
-    vim.lsp.config("*", { capabilities = capabilities })
 
     vim.lsp.config("lua_ls", {
-      capabilities = capabilities,
       settings = {
         Lua = {
           diagnostics = {
@@ -75,6 +70,5 @@ return {
     vim.lsp.config("ts_ls", ts_ls_config)
     vim.lsp.config("vue_ls", vue_ls_config)
     vim.lsp.enable({ "ts_ls", "vue_ls" })
-
   end,
 }
