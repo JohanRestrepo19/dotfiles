@@ -1,5 +1,5 @@
 [general]
-import = ["./themes/gruvbox-dark.toml"]
+import = ["./themes/rose-pine.toml"]
 
 [font]
 # normal = { family = "Fira Code Nerd Font" }

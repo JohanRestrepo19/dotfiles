@@ -1,3 +1,4 @@
+# font-family = "CaskaydiaCoveNerdFont"
 font-family = "JetBrains Mono Nerd Font"
 font-size = 11.5
 
@@ -10,10 +11,10 @@ shell-integration-features = no-cursor
 window-decoration = client
 keybind = f11=toggle_window_decorations
 
-# theme = "solarized-osaka-dark"
-theme = "Gruvbox Dark Hard"
+theme = "solarized-osaka-dark"
+# theme = "carbonfox"
 
-background-opacity = 0.98
+background-opacity = 0.95
 background-blur-radius = 20
 # window-width = 90
 # window-height = 26
