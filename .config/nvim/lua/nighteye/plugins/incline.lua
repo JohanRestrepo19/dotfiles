@@ -10,7 +10,7 @@ return {
         padding = 0,
         margin = { horizontal = 1 },
       },
-      hide = { cursorline = true },
+      hide = { cursorline = 'smart' },
       render = function(props)
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
 

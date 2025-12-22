@@ -48,10 +48,10 @@ return {
       view_options = {
         show_hidden = true,
       },
-      -- float = {
-      --   max_width = 0.6,
-      --   max_height = 0.4,
-      -- },
+      float = {
+        max_width = 0.6,
+        max_height = 0.4,
+      },
       delete_to_trash = true,
     })
   end,

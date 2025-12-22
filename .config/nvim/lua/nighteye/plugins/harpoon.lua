@@ -15,7 +15,7 @@ return {
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
-    for i = 1, 4 do
+    for i = 1, 5 do
       vim.keymap.set("n", "<leader>" .. i, function()
         harpoon:list():select(i)
       end)

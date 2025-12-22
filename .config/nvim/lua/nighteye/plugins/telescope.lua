@@ -21,7 +21,6 @@ return {
           prompt_position = "top",
           width = 0.8,
           height = 0.8,
-          flip_columns = 104,
           horizontal = {
             preview_width = 0.5,
           },
@@ -83,7 +82,9 @@ return {
     local opts = { noremap = true, silent = true }
 
     vim.keymap.set("n", "<leader>fg", builtin.git_files, opts)
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
+    vim.keymap.set("n", "<leader>ff", function()
+      builtin.find_files(require("telescope.themes").get_dropdown({}))
+    end, opts)
     vim.keymap.set("n", "<leader>ft", builtin.live_grep, opts)
     vim.keymap.set("n", "<leader>fw", builtin.grep_string, opts)
     vim.keymap.set("n", "<leader>fW", function()

@@ -22,6 +22,7 @@ return {
         "pyright",
         "ts_ls",
         "vue_ls",
+        "intelephense",
       },
       automatic_installation = false,
     })

@@ -63,7 +63,7 @@ return {
   },
   {
     "craftzdog/solarized-osaka.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
       require("solarized-osaka").setup({
@@ -102,7 +102,7 @@ return {
   },
   {
     "ellisonleao/gruvbox.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("gruvbox").setup({
@@ -123,21 +123,14 @@ return {
     lazy = true,
     config = function()
       require("rose-pine").setup({
-        variant = "main",
+        variant = "moon",
         styles = {
           bold = false,
           italic = false,
           transparency = true,
         },
 
-        highlight_groups = {
-          TelescopeBorder = { fg = "highlight_high", bg = "none" },
-          TelescopeNormal = { bg = "none" },
-          TelescopePromptNormal = { bg = "base" },
-          TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-          TelescopeSelection = { fg = "text", bg = "base" },
-          TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
-        },
+        highlight_groups = {},
       })
 
       vim.cmd("colorscheme rose-pine")
@@ -160,7 +153,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("terafox")
+      vim.cmd.colorscheme("carbonfox")
     end,
   },
   {
@@ -234,9 +227,9 @@ return {
             WinSeparator = { fg = theme.ui.fg_reverse },
           }
         end,
-        theme = "dragon", -- Load "wave" theme when 'background' option is not set
+        theme = "wave", -- Load "wave" theme when 'background' option is not set
         background = { -- map the value of 'background' option to a theme
-          dark = "dragon", -- try "dragon" !
+          dark = "wave", -- try "dragon" !
           light = "lotus",
         },
       })

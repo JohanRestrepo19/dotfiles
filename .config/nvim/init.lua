@@ -5,4 +5,6 @@
 -- ██║██║ ╚████║██║   ██║██╗███████╗╚██████╔╝██║  ██║
 -- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
+-- TODO: Check why lua lsp is quitting after initialization
+
 require("nighteye")
