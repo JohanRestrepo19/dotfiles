@@ -44,6 +44,8 @@ alias lg='lazygit'
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
