@@ -6,7 +6,6 @@
 # fi
 
 source ~/.config/zsh/.zsh_functions/custom.sh
-source ~/.config/zsh/.zsh_functions/source-fzf.sh
 
 # Created by Zap installer
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
@@ -51,6 +50,8 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 # [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+source <(fzf --zsh)
 
 export FZF_CTRL_T_OPTS="--height 60% \
 --border sharp \
