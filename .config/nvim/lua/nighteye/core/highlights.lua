@@ -1,6 +1,6 @@
 -- vim.opt.colorcolumn = "80"
-vim.opt.cursorline = true
--- vim.opt.guicursor = ""
+-- vim.opt.cursorline = true
+vim.opt.guicursor = ""
 vim.opt.termguicolors = true
 vim.opt.wildoptions = "pum"
 vim.opt.background = "dark"
