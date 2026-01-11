@@ -55,7 +55,7 @@ return {
 
       pickers = {
         buffers = {
-          initial_mode = "insert",
+          initial_mode = "normal",
           sort_mru = true,
           mappings = {
             ["n"] = {
