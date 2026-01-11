@@ -1,4 +1,4 @@
-font-family = "Hack Nerd Font"
+font-family = "PlemolJP Console NF"
 
 cursor-style = block
 shell-integration-features = no-cursor
@@ -6,7 +6,7 @@ shell-integration-features = no-cursor
 window-decoration = client
 keybind = f11=toggle_window_decorations
 
-theme = "solarized-osaka-dark"
+theme = "Rose Pine"
 
 background-opacity = 0.90
 background-blur-radius = 20
