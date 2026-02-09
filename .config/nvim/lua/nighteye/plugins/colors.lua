@@ -1,13 +1,13 @@
 return {
   {
     "sainnhe/everforest",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
       vim.g.everforest_enable_italic = true
       vim.g.everforest_background = "hard"
       vim.g.everforest_transparent_background = 2
-      vim.g.everforest_float_style = "dim"
+      vim.g.everforest_float_style = "bright"
       vim.cmd.colorscheme("everforest")
     end,
   },
@@ -52,10 +52,7 @@ return {
         terminal_colors = true,
         styles = { sidebars = "transparent", floats = "transparent" },
 
-        on_highlights = function(highlights, colors)
-          highlights.WinSeparator = { fg = colors.cyan }
-          -- highlights.CursorLine = { fg = colors.none }
-        end,
+        on_highlights = function(highlights, colors) end,
       })
 
       vim.cmd.colorscheme("tokyonight")
@@ -120,7 +117,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = false,
+    lazy = true,
     config = function()
       require("rose-pine").setup({
         variant = "main",
@@ -153,7 +150,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("carbonfox")
+      vim.cmd.colorscheme("terafox")
     end,
   },
   {

@@ -6,6 +6,22 @@ return {
       preview_config = { border = "rounded" },
       on_attach = function(_)
         local gitsigns = require("gitsigns")
+        -- Navigation
+        vim.keymap.set("n", "<leader>nh", function()
+          if vim.wo.diff then
+            vim.cmd.normal({ "]c", bang = true })
+          else
+            gitsigns.nav_hunk("next")
+          end
+        end)
+
+        vim.keymap.set("n", "<leader>ph", function()
+          if vim.wo.diff then
+            vim.cmd.normal({ "[c", bang = true })
+          else
+            gitsigns.nav_hunk("prev")
+          end
+        end)
 
         -- Actions
         vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk)
@@ -25,7 +41,7 @@ return {
         vim.keymap.set("n", "<leader>hi", gitsigns.preview_hunk_inline)
 
         vim.keymap.set("n", "<leader>hb", function()
-          gitsigns.blame_line({ full = true })
+          gitsigns.blame_line()
         end)
 
         vim.keymap.set("n", "<leader>hd", gitsigns.diffthis)
@@ -41,7 +57,6 @@ return {
 
         -- Toggles
         vim.keymap.set("n", "<leader>tb", gitsigns.toggle_current_line_blame)
-        vim.keymap.set("n", "<leader>tw", gitsigns.toggle_word_diff)
       end,
     })
   end,
