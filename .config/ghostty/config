@@ -1,12 +1,14 @@
-font-family = "PlemolJP Console NF"
+font-family = "CaskaydiaCove Nerd Font"
 
 cursor-style = block
+cursor-style-blink = true
 shell-integration-features = no-cursor
+mouse-hide-while-typing = true
 
 window-decoration = client
 keybind = f11=toggle_window_decorations
 
-theme = "Rose Pine"
+theme = "Everforest Dark Hard"
 
 background-opacity = 0.90
 background-blur-radius = 20
