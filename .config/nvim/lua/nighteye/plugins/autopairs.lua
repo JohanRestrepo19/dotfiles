@@ -19,19 +19,4 @@ return {
     "windwp/nvim-ts-autotag",
     opts = true,
   },
-  {
-    "HiPhish/rainbow-delimiters.nvim",
-    -- event = "VeryLazy",
-    lazy = false,
-    config = function()
-      require("rainbow-delimiters.setup").setup({
-        strategy = {
-          [""] = "rainbow-delimiters.strategy.global",
-        },
-        query = {
-          [""] = "rainbow-delimiters",
-        },
-      })
-    end,
-  },
 }
