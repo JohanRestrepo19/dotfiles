@@ -1,17 +1,17 @@
 return {
   "stevearc/conform.nvim",
-  event = { "BufWritePre" },
-  keys = {
-    {
-      -- Customize or remove this keymap to your liking
-      "<leader>pf",
-      function()
-        require("conform").format({ async = true, lsp_format = "fallback" })
-      end,
-      mode = "",
-      desc = "Format buffer",
-    },
-  },
+  -- event = { "BufWritePre" },
+  -- keys = {
+  -- {
+  --   -- Customize or remove this keymap to your liking
+  --   "<leader>pf",
+  --   function()
+  --     require("conform").format({ async = true, lsp_format = "fallback" })
+  --   end,
+  --   mode = "",
+  --   desc = "Format buffer",
+  -- },
+  -- },
   config = function()
     local conform = require("conform")
 
@@ -64,7 +64,7 @@ return {
           ["end"] = { args.line2, end_line:len() },
         }
       end
-      require("conform").format({ async = true, lsp_format = "fallback", range = range, timeout_ms = 500 })
+      require("conform").format({ async = true, lsp_format = "fallback", range = range })
     end, { range = true })
   end,
 }

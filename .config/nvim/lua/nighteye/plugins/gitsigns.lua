@@ -6,6 +6,22 @@ return {
       preview_config = { border = "rounded" },
       on_attach = function(_)
         local gitsigns = require("gitsigns")
+        -- Navigation
+        vim.keymap.set("n", "]c", function()
+          if vim.wo.diff then
+            vim.cmd.normal({ "]c", bang = true })
+          else
+            gitsigns.nav_hunk("next")
+          end
+        end)
+
+        vim.keymap.set("n", "[c", function()
+          if vim.wo.diff then
+            vim.cmd.normal({ "[c", bang = true })
+          else
+            gitsigns.nav_hunk("prev")
+          end
+        end)
 
         -- Actions
         vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk)

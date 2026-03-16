@@ -6,7 +6,7 @@ return {
   enable = false,
   config = function()
     require("lspsaga").setup({
-      diagnostic = { enable = false },
+      diagnostic = { enable = true },
       symbol_in_winbar = { enable = false },
       lightbulb = { enable = false, sign = false },
     })
