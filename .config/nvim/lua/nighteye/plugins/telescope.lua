@@ -55,7 +55,7 @@ return {
 
       pickers = {
         buffers = {
-          initial_mode = "normal",
+          initial_mode = "insert",
           sort_mru = true,
           mappings = {
             ["n"] = {
@@ -69,9 +69,9 @@ return {
           previewer = false,
           layout_config = { height = 40 },
         },
-        grep_string = { initial_mode = "normal" },
+        grep_string = { initial_mode = "insert" },
         lsp_references = {
-          initial_mode = "normal",
+          initial_mode = "insert",
           show_line = true,
         },
       },

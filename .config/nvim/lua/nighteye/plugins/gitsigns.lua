@@ -7,7 +7,7 @@ return {
       on_attach = function(_)
         local gitsigns = require("gitsigns")
         -- Navigation
-        vim.keymap.set("n", "<leader>nh", function()
+        vim.keymap.set("n", "]c", function()
           if vim.wo.diff then
             vim.cmd.normal({ "]c", bang = true })
           else
@@ -15,7 +15,7 @@ return {
           end
         end)
 
-        vim.keymap.set("n", "<leader>ph", function()
+        vim.keymap.set("n", "[c", function()
           if vim.wo.diff then
             vim.cmd.normal({ "[c", bang = true })
           else

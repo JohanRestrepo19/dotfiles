@@ -1,7 +1,7 @@
 return {
   "HiPhish/rainbow-delimiters.nvim",
   -- event = "VeryLazy",
-  lazy = true,
+  lazy = false,
   config = function()
     require("rainbow-delimiters.setup").setup({
       strategy = {

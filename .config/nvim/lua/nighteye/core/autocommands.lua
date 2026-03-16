@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     vim.keymap.set("n", "gd", function()
       vim.lsp.buf.definition()
-      vim.cmd("normal! zz")
+      -- vim.cmd("normal! zz")
     end, bufopts)
 
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)

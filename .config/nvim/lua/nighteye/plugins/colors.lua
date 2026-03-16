@@ -1,13 +1,61 @@
 return {
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha",
+        transparent_background = true,
+        float = {
+          transparent = true,
+          solid = true,
+        },
+        show_end_of_buffer = true,
+        auto_integrations = true,
+        lsp_styles = {
+          underlines = {
+            errors = { "undercurl" },
+            hints = { "undercurl" },
+            warnings = { "undercurl" },
+            information = { "undercurl" },
+            ok = { "undercurl" },
+          },
+          inlay_hints = {
+            background = true,
+          },
+        },
+      })
+      vim.cmd.colorscheme("catppuccin")
+    end,
+  },
+  {
     "sainnhe/everforest",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       vim.g.everforest_enable_italic = true
       vim.g.everforest_background = "hard"
       vim.g.everforest_transparent_background = 2
       vim.g.everforest_float_style = "bright"
+      vim.cmd.colorscheme("everforest")
+    end,
+  },
+  {
+    "neanias/everforest-nvim",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require("everforest").setup({
+        background = "dark",
+        transparent_background_level = 2,
+        on_highlights = function(hl, palette)
+          hl.NormalFloat = {}
+          hl.FloatBorder = {}
+        end,
+      })
+
       vim.cmd.colorscheme("everforest")
     end,
   },
@@ -70,9 +118,9 @@ return {
           floats = "transparent",
         },
         on_highlights = function(hl, c)
-          -- hl.LineNr = { fg = c.base01 }
-          -- hl.CursorLine = { bg = c.base03 }
-          -- hl.CursorLineNr = { fg = c.base2 }
+          hl.LineNr = { fg = c.base01 }
+          hl.CursorLine = { bg = c.base03 }
+          hl.CursorLineNr = { fg = c.base2 }
         end,
       })
       vim.cmd.colorscheme("solarized-osaka")
@@ -99,16 +147,12 @@ return {
   },
   {
     "ellisonleao/gruvbox.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
       require("gruvbox").setup({
         transparent_mode = true,
-        contrast = "",
-        italic = {
-          strings = false,
-          comments = false,
-        },
+        contrast = "hard",
       })
       vim.o.background = "dark"
       vim.cmd.colorscheme("gruvbox")
@@ -120,7 +164,7 @@ return {
     lazy = true,
     config = function()
       require("rose-pine").setup({
-        variant = "main",
+        variant = "moon",
         styles = {
           bold = false,
           italic = false,
@@ -193,25 +237,26 @@ return {
             NormalFloat = { bg = "none" },
             FloatBorder = { bg = "none" },
             FloatTitle = { bg = "none" },
-            -- TelescopeBorder = { fg = "none" },
-            TelescopeBorder = { fg = palette.dragonBlue2, bg = "none" },
+
+            -- -- TelescopeBorder = { fg = "none" },
+            -- TelescopeBorder = { fg = palette.dragonBlue2, bg = "none" },
 
             -- Save an hlgroup with dark background and dimmed foreground
             -- so that you can use it where your still want darker windows.
             -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
-            NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+            -- NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
 
             -- Popular plugins that open floats will link to NormalFloat by default;
             -- set their background accordingly if you wish to keep them dark and borderless
-            LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-            MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+            -- LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+            -- MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
 
             -- CursorLine = { bg = "none" },
 
-            DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
-            DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
-            DiagnosticVirtualTextWarn = makeDiagnosticColor(theme.diag.warning),
-            DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
+            -- DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
+            -- DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
+            -- DiagnosticVirtualTextWarn = makeDiagnosticColor(theme.diag.warning),
+            -- DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
 
             RainbowDelimiterRed = { fg = palette.dragonRed },
             RainbowDelimiterYellow = { fg = palette.dragonYellow },
@@ -221,7 +266,7 @@ return {
             RainbowDelimiterViolet = { fg = palette.dragonViolet },
             RainbowDelimiterCyan = { fg = palette.dragonCyan },
 
-            WinSeparator = { fg = theme.ui.fg_reverse },
+            -- WinSeparator = { fg = theme.ui.fg_reverse },
           }
         end,
         theme = "wave", -- Load "wave" theme when 'background' option is not set
