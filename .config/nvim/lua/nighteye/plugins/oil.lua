@@ -6,12 +6,12 @@ end
 
 return {
   "stevearc/oil.nvim",
-  -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
-  dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+  dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
   keys = {
-    { "<leader>e", "<cmd>Oil<cr>", desc = "Oil open parent directory" },
+    { "<leader>E", "<cmd>Oil<cr>", desc = "Oil open parent directory" },
     {
-      "<leader>E",
+      "<leader>e",
       function()
         local oil = require("oil")
         oil.toggle_float()
@@ -42,9 +42,9 @@ return {
           desc = "Open file or select directory",
         },
       },
-      win_options = {
-        winbar = "%{v:lua.CustomOilBar()}",
-      },
+      -- win_options = {
+      --   winbar = "%{v:lua.CustomOilBar()}",
+      -- },
       view_options = {
         show_hidden = true,
       },
