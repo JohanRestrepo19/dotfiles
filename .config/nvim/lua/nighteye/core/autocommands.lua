@@ -37,12 +37,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set("n", "K", function()
-      local is_saga, _ = pcall(require, "lspsaga")
-      if vim.bo.filetype == "help" or not is_saga then
-        return vim.lsp.buf.hover()
-      else
-        return vim.api.nvim_command("Lspsaga hover_doc")
-      end
+      return vim.lsp.buf.hover()
     end, bufopts)
     vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "<C-j>", function()
