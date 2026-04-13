@@ -91,7 +91,7 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
       require("tokyonight").setup({
@@ -101,7 +101,7 @@ return {
         styles = { sidebars = "transparent", floats = "transparent" },
 
         on_highlights = function(highlights, colors)
-          highlights.WinSeparator = { fg = colors.cyan }
+          -- highlights.WinSeparator = { fg = colors.cyan }
           -- highlights.CursorLine = { fg = colors.none }
         end,
       })
@@ -111,7 +111,7 @@ return {
   },
   {
     "craftzdog/solarized-osaka.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("solarized-osaka").setup({
@@ -150,7 +150,7 @@ return {
   },
   {
     "ellisonleao/gruvbox.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("gruvbox").setup({
